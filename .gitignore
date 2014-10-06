@@ -1,2 +1,3 @@
-*.js
+# *.js
+ace/
 !main.js
