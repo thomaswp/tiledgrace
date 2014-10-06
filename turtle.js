@@ -966,96 +966,39 @@ function gracecode_turtle () {
         return bool321
         if320 = undefined;
       }
-      lineNumber = 160
+      lineNumber = 167
       lineNumber = 158
       var call322 = callmethod(var_dom,"document", [0]);
       var_document = call322;
-      lineNumber = 160
-      var string323 = new GraceString("output-select");
-      var call324 = callmethod(var_document,"getElementById", [1], string323);
-      var var_ts = call324;
-      lineNumber = 160;
-      moduleName = "turtle";
-      if (!Grace_isTrue(callmethod(var_Unknown, "match",
-        [1], var_ts)))
-          throw new GraceExceptionPacket(TypeErrorObject,
-                new GraceString("expected "
-                + "initial value of def 'ts' to be of type Unknown"))
-      lineNumber = 161
-      var call326 = callmethod(var_ts,"options", [0]);
-      var call327 = callmethod(call326,"length", [0]);
-      var diff329 = callmethod(call327, "-", [1], new GraceNum(1));
-      var opresult332 = callmethod(new GraceNum(0), "..", [1], diff329);
-      lineNumber = 167
-      var block333 = Grace_allocObject();
-      block333.methods["apply"] = function() {
-        var args = Array.prototype.slice.call(arguments, 1);
-        return this.real.apply(this.receiver, args);
-      }
-      block333.methods["applyIndirectly"] = function(argcv, a) {
-        return this.real.apply(this.receiver, a._value);
-      }
-      block333.methods["outer"] = function() {
-        return callmethod(this.receiver, 'outer', [0]);
-      }
-      block333.methods["match"] = GraceBlock_match;
-      block333.methods["prefix?"] = GraceBlock_lift;
-      block333.receiver = this;
-      block333.className = 'block<turtle:167>';
-      block333.real = function(
-        var_i
-      ) {
-        sourceObject = this;
-        lineNumber = 166
-        var if334 = var_done;
-        lineNumber = 162
-        var string335 = new GraceString("canvas");
-        var call337 = callmethod(var_ts,"options", [0]);
-        var call338 = callmethod(call337,"item", [1], var_i);
-        var call339 = callmethod(call338,"value", [0]);
-        var opresult341 = callmethod(call339, "==", [1], string335);
-        if (Grace_isTrue(opresult341)) {
-          lineNumber = 164
-          lineNumber = 162
-          lineNumber = 163
-          var call342 = callmethod(var_ts,"selectedIndex:=", [1], var_i);
-          lineNumber = 164
-          var call343 = callmethod(var_dom,"window", [0]);
-          var call344 = callmethod(call343,"outputswitch", [0]);
-          if334 = call344;
-        }
-        return if334;
-      };
-      var call345 = callmethod(Grace_prelude,"for()do", [1, 1], opresult332, block333);
       lineNumber = 168
       lineNumber = 167
-      var bool346 = new GraceBoolean(true)
-      var_initialised = bool346;
+      var bool323 = new GraceBoolean(true)
+      var_initialised = bool323;
       lineNumber = 169
       lineNumber = 168
-      var call347 = callmethod(var_dom,"window", [0]);
-      var call348 = callmethod(call347,"Math", [0]);
-      var_trig = call348;
+      var call324 = callmethod(var_dom,"window", [0]);
+      var call325 = callmethod(call324,"Math", [0]);
+      var_trig = call325;
       lineNumber = 169
-      var string349 = new GraceString("standard-canvas");
-      var call350 = callmethod(var_document,"getElementById", [1], string349);
-      var_canvas = call350;
+      var string326 = new GraceString("standard-canvas");
+      var call327 = callmethod(var_document,"getElementById", [1], string326);
+      var_canvas = call327;
       lineNumber = 170
-      var string351 = new GraceString("2d");
-      var call352 = callmethod(var_canvas,"getContext", [1], string351);
-      var_ctx = call352;
+      var string328 = new GraceString("2d");
+      var call329 = callmethod(var_canvas,"getContext", [1], string328);
+      var_ctx = call329;
       lineNumber = 172
       lineNumber = 168
       lineNumber = 171
-      var call353 = callmethod(var_ctx,"lineWidth:=", [1], new GraceNum(1));
+      var call330 = callmethod(var_ctx,"lineWidth:=", [1], new GraceNum(1));
       lineNumber = 173
       lineNumber = 168
       lineNumber = 172
-      var string354 = new GraceString("white");
-      var call355 = callmethod(var_ctx,"fillStyle:=", [1], string354);
+      var string331 = new GraceString("white");
+      var call332 = callmethod(var_ctx,"fillStyle:=", [1], string331);
       lineNumber = 173
-      var call356 = callmethod(var_ctx,"fillRect", [4], new GraceNum(0), new GraceNum(0), new GraceNum(500), new GraceNum(500));
-      return call356
+      var call333 = callmethod(var_ctx,"fillRect", [4], new GraceNum(0), new GraceNum(0), new GraceNum(500), new GraceNum(500));
+      return call333
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -1074,9 +1017,9 @@ function gracecode_turtle () {
   func319.definitionLine = 154;
   func319.definitionModule = "turtle";
   lineNumber = 175
-  var func357 = function(argcv) {
+  var func334 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func357.paramCounts[0])
+    if (argcv[0] !=  func334.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (start)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1084,28 +1027,28 @@ function gracecode_turtle () {
     try {
       lineNumber = 176
       onSelf = true;
-      var call358 = callmethod(this, "initialise", [0]);
+      var call335 = callmethod(this, "initialise", [0]);
       lineNumber = 180
-      var string359 = new GraceString("canvas");
-      var call360 = callmethod(var_dom,"document", [0]);
-      var call361 = callmethod(call360,"createElement", [1], string359);
-      var_backingCanvas = call361;
+      var string336 = new GraceString("canvas");
+      var call337 = callmethod(var_dom,"document", [0]);
+      var call338 = callmethod(call337,"createElement", [1], string336);
+      var_backingCanvas = call338;
       lineNumber = 182
       lineNumber = 180
       lineNumber = 181
-      var call362 = callmethod(var_backingCanvas,"height:=", [1], new GraceNum(250));
+      var call339 = callmethod(var_backingCanvas,"height:=", [1], new GraceNum(250));
       lineNumber = 183
       lineNumber = 180
       lineNumber = 182
-      var call363 = callmethod(var_backingCanvas,"width:=", [1], new GraceNum(500));
+      var call340 = callmethod(var_backingCanvas,"width:=", [1], new GraceNum(500));
       lineNumber = 183
-      var string364 = new GraceString("2d");
-      var call365 = callmethod(var_backingCanvas,"getContext", [1], string364);
-      var_ctx = call365;
+      var string341 = new GraceString("2d");
+      var call342 = callmethod(var_backingCanvas,"getContext", [1], string341);
+      var_ctx = call342;
       lineNumber = 184
-      var string366 = new GraceString("2d");
-      var call367 = callmethod(var_canvas,"getContext", [1], string366);
-      var var_mctx = call367;
+      var string343 = new GraceString("2d");
+      var call344 = callmethod(var_canvas,"getContext", [1], string343);
+      var var_mctx = call344;
       lineNumber = 184;
       moduleName = "turtle";
       if (!Grace_isTrue(callmethod(var_Unknown, "match",
@@ -1115,32 +1058,32 @@ function gracecode_turtle () {
                 + "initial value of def 'mctx' to be of type Unknown"))
       lineNumber = 185
       lineNumber = 195
-      var block368 = Grace_allocObject();
-      block368.methods["apply"] = function() {
+      var block345 = Grace_allocObject();
+      block345.methods["apply"] = function() {
         var args = Array.prototype.slice.call(arguments, 1);
         return this.real.apply(this.receiver, args);
       }
-      block368.methods["applyIndirectly"] = function(argcv, a) {
+      block345.methods["applyIndirectly"] = function(argcv, a) {
         return this.real.apply(this.receiver, a._value);
       }
-      block368.methods["outer"] = function() {
+      block345.methods["outer"] = function() {
         return callmethod(this.receiver, 'outer', [0]);
       }
-      block368.methods["match"] = GraceBlock_match;
-      block368.methods["prefix?"] = GraceBlock_lift;
-      block368.receiver = this;
-      block368.className = 'block<turtle:195>';
-      block368.real = function(
+      block345.methods["match"] = GraceBlock_match;
+      block345.methods["prefix?"] = GraceBlock_lift;
+      block345.receiver = this;
+      block345.className = 'block<turtle:195>';
+      block345.real = function(
         var_step
       ) {
         sourceObject = this;
         lineNumber = 187
         lineNumber = 180
         lineNumber = 186
-        var string369 = new GraceString("white");
-        var call370 = callmethod(var_mctx,"fillStyle:=", [1], string369);
+        var string346 = new GraceString("white");
+        var call347 = callmethod(var_mctx,"fillStyle:=", [1], string346);
         lineNumber = 187
-        var call371 = callmethod(var_mctx,"fillRect", [4], new GraceNum(0), new GraceNum(0), new GraceNum(500), new GraceNum(500));
+        var call348 = callmethod(var_mctx,"fillRect", [4], new GraceNum(0), new GraceNum(0), new GraceNum(500), new GraceNum(500));
         lineNumber = 189
         lineNumber = 188
         var_x = new GraceNum(150);
@@ -1151,17 +1094,17 @@ function gracecode_turtle () {
         lineNumber = 190
         var_turtleAngle = new GraceNum(0);
         lineNumber = 191
-        var call372 = callmethod(var_step,"apply", [0]);
+        var call349 = callmethod(var_step,"apply", [0]);
         lineNumber = 192
-        var call373 = callmethod(var_mctx,"drawImage", [3], var_backingCanvas, new GraceNum(0), new GraceNum(0));
+        var call350 = callmethod(var_mctx,"drawImage", [3], var_backingCanvas, new GraceNum(0), new GraceNum(0));
         lineNumber = 193
         onSelf = true;
-        var call374 = callmethod(this, "drawTurtle", [1], var_turtleAngle);
-        return call374;
+        var call351 = callmethod(this, "drawTurtle", [1], var_turtleAngle);
+        return call351;
       };
       lineNumber = 185
-      var call375 = callmethod(var_dom,"for()waiting()do", [1, 1, 1], var_steps, var_delay, block368);
-      return call375
+      var call352 = callmethod(var_dom,"for()waiting()do", [1, 1, 1], var_steps, var_delay, block345);
+      return call352
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -1170,15 +1113,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func357.paramCounts = [
+  func334.paramCounts = [
     0,
   ];
-  func357.variableArities = [
+  func334.variableArities = [
     false,
   ];
-  this.methods["start"] = func357;
-  func357.definitionLine = 175;
-  func357.definitionModule = "turtle";
+  this.methods["start"] = func334;
+  func334.definitionLine = 175;
+  func334.definitionModule = "turtle";
   lineNumber = 1
   // Import of dom
   if (typeof gracecode_dom == 'undefined')
@@ -1194,9 +1137,9 @@ function gracecode_turtle () {
   lineNumber = 6
   var var_document;
   lineNumber = 191
-  var func376 = function(argcv) {
+  var func353 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func376.paramCounts[0])
+    if (argcv[0] !=  func353.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (document)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1212,21 +1155,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func376.paramCounts = [
+  func353.paramCounts = [
     0,
   ];
-  func376.variableArities = [
+  func353.variableArities = [
     false,
   ];
-  this.methods["document"] = func376;
-  func376.definitionLine = 191;
-  func376.definitionModule = "turtle";
+  this.methods["document"] = func353;
+  func353.definitionLine = 191;
+  func353.definitionModule = "turtle";
   lineNumber = 191
-  var func377 = function(argcv) {
+  var func354 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func377.paramCounts[0])
+    if (argcv[0] !=  func354.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (document:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1242,21 +1185,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func377.paramCounts = [
+  func354.paramCounts = [
     1,
   ];
-  func377.variableArities = [
+  func354.variableArities = [
     false,
   ];
-  this.methods["document:="] = func377;
-  func377.definitionLine = 191;
-  func377.definitionModule = "turtle";
+  this.methods["document:="] = func354;
+  func354.definitionLine = 191;
+  func354.definitionModule = "turtle";
   lineNumber = 7
   var var_canvas;
   lineNumber = 191
-  var func378 = function(argcv) {
+  var func355 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func378.paramCounts[0])
+    if (argcv[0] !=  func355.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (canvas)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1272,21 +1215,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func378.paramCounts = [
+  func355.paramCounts = [
     0,
   ];
-  func378.variableArities = [
+  func355.variableArities = [
     false,
   ];
-  this.methods["canvas"] = func378;
-  func378.definitionLine = 191;
-  func378.definitionModule = "turtle";
+  this.methods["canvas"] = func355;
+  func355.definitionLine = 191;
+  func355.definitionModule = "turtle";
   lineNumber = 191
-  var func379 = function(argcv) {
+  var func356 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func379.paramCounts[0])
+    if (argcv[0] !=  func356.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (canvas:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1302,21 +1245,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func379.paramCounts = [
+  func356.paramCounts = [
     1,
   ];
-  func379.variableArities = [
+  func356.variableArities = [
     false,
   ];
-  this.methods["canvas:="] = func379;
-  func379.definitionLine = 191;
-  func379.definitionModule = "turtle";
+  this.methods["canvas:="] = func356;
+  func356.definitionLine = 191;
+  func356.definitionModule = "turtle";
   lineNumber = 8
   var var_ctx;
   lineNumber = 191
-  var func380 = function(argcv) {
+  var func357 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func380.paramCounts[0])
+    if (argcv[0] !=  func357.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (ctx)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1332,21 +1275,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func380.paramCounts = [
+  func357.paramCounts = [
     0,
   ];
-  func380.variableArities = [
+  func357.variableArities = [
     false,
   ];
-  this.methods["ctx"] = func380;
-  func380.definitionLine = 191;
-  func380.definitionModule = "turtle";
+  this.methods["ctx"] = func357;
+  func357.definitionLine = 191;
+  func357.definitionModule = "turtle";
   lineNumber = 191
-  var func381 = function(argcv) {
+  var func358 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func381.paramCounts[0])
+    if (argcv[0] !=  func358.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (ctx:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1362,21 +1305,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func381.paramCounts = [
+  func358.paramCounts = [
     1,
   ];
-  func381.variableArities = [
+  func358.variableArities = [
     false,
   ];
-  this.methods["ctx:="] = func381;
-  func381.definitionLine = 191;
-  func381.definitionModule = "turtle";
+  this.methods["ctx:="] = func358;
+  func358.definitionLine = 191;
+  func358.definitionModule = "turtle";
   lineNumber = 10
   var var_trig;
   lineNumber = 191
-  var func382 = function(argcv) {
+  var func359 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func382.paramCounts[0])
+    if (argcv[0] !=  func359.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (trig)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1392,21 +1335,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func382.paramCounts = [
+  func359.paramCounts = [
     0,
   ];
-  func382.variableArities = [
+  func359.variableArities = [
     false,
   ];
-  this.methods["trig"] = func382;
-  func382.definitionLine = 191;
-  func382.definitionModule = "turtle";
+  this.methods["trig"] = func359;
+  func359.definitionLine = 191;
+  func359.definitionModule = "turtle";
   lineNumber = 191
-  var func383 = function(argcv) {
+  var func360 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func383.paramCounts[0])
+    if (argcv[0] !=  func360.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (trig:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1422,19 +1365,19 @@ function gracecode_turtle () {
       }
     }
   }
-  func383.paramCounts = [
+  func360.paramCounts = [
     1,
   ];
-  func383.variableArities = [
+  func360.variableArities = [
     false,
   ];
-  this.methods["trig:="] = func383;
-  func383.definitionLine = 191;
-  func383.definitionModule = "turtle";
+  this.methods["trig:="] = func360;
+  func360.definitionLine = 191;
+  func360.definitionModule = "turtle";
   lineNumber = 10
-  var func384 = function(argcv) {
+  var func361 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func384.paramCounts[0])
+    if (argcv[0] !=  func361.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (colour)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1449,65 +1392,65 @@ function gracecode_turtle () {
       }
     }
   }
-  func384.paramCounts = [
+  func361.paramCounts = [
     0,
   ];
-  func384.variableArities = [
+  func361.variableArities = [
     false,
   ];
-  this.methods["colour"] = func384;
-  func384.definitionLine = 10;
-  func384.definitionModule = "turtle";
-  var obj385 = Grace_allocObject();
-  obj385.definitionModule = "turtle";
-  obj385.definitionLine = 10;
-  obj385.outer = this;
-  var reader_turtle_outer_386 = function() {
+  this.methods["colour"] = func361;
+  func361.definitionLine = 10;
+  func361.definitionModule = "turtle";
+  var obj362 = Grace_allocObject();
+  obj362.definitionModule = "turtle";
+  obj362.definitionLine = 10;
+  obj362.outer = this;
+  var reader_turtle_outer_363 = function() {
     return this.outer;
   }
-  obj385.methods["outer"] = reader_turtle_outer_386;
-  function obj_init_385() {
+  obj362.methods["outer"] = reader_turtle_outer_363;
+  function obj_init_362() {
     var origSuperDepth = superDepth;
-    superDepth = obj385;
-    obj385.annotations = [];
-    var func387 = function(argcv) {
+    superDepth = obj362;
+    obj362.annotations = [];
+    var func364 = function(argcv) {
       var curarg = 1;
       var var_r__39__ = arguments[curarg];
       curarg++;
-      if (argcv[0] !=  func387.paramCounts[0])
+      if (argcv[0] !=  func364.paramCounts[0])
         callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (r)"));
       var var_g__39__ = arguments[curarg];
       curarg++;
-      if (argcv[1] !=  func387.paramCounts[1])
+      if (argcv[1] !=  func364.paramCounts[1])
         callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 2 (g)"));
       var var_b__39__ = arguments[curarg];
       curarg++;
-      if (argcv[2] !=  func387.paramCounts[2])
+      if (argcv[2] !=  func364.paramCounts[2])
         callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 3 (b)"));
       var returnTarget = invocationCount;
       invocationCount++;
       moduleName = "turtle";
       try {
-        var obj388 = Grace_allocObject();
-        obj388.definitionModule = "turtle";
-        obj388.definitionLine = 10;
-        obj388.outer = this;
-        var reader_turtle_outer_389 = function() {
+        var obj365 = Grace_allocObject();
+        obj365.definitionModule = "turtle";
+        obj365.definitionLine = 10;
+        obj365.outer = this;
+        var reader_turtle_outer_366 = function() {
           return this.outer;
         }
-        obj388.methods["outer"] = reader_turtle_outer_389;
-        function obj_init_388() {
+        obj365.methods["outer"] = reader_turtle_outer_366;
+        function obj_init_365() {
           var origSuperDepth = superDepth;
-          superDepth = obj388;
-          obj388.annotations = [];
-          sourceObject = obj388;
+          superDepth = obj365;
+          obj365.annotations = [];
+          sourceObject = obj365;
           lineNumber = 11
-          obj388.data["r"] = var_r__39__;
-          var reader_turtle_r_390 = function() {
+          obj365.data["r"] = var_r__39__;
+          var reader_turtle_r_367 = function() {
             return this.data["r"];
           }
-          reader_turtle_r_390.def = true;
-          obj388.methods["r"] = reader_turtle_r_390;
+          reader_turtle_r_367.def = true;
+          obj365.methods["r"] = reader_turtle_r_367;
           lineNumber = 12;
           moduleName = "turtle";
           lineNumber = 11
@@ -1516,14 +1459,14 @@ function gracecode_turtle () {
               throw new GraceExceptionPacket(TypeErrorObject,
                     new GraceString("expected "
                     + "initial value of def 'r' to be of type Unknown"))
-          sourceObject = obj388;
+          sourceObject = obj365;
           lineNumber = 12
-          obj388.data["g"] = var_g__39__;
-          var reader_turtle_g_391 = function() {
+          obj365.data["g"] = var_g__39__;
+          var reader_turtle_g_368 = function() {
             return this.data["g"];
           }
-          reader_turtle_g_391.def = true;
-          obj388.methods["g"] = reader_turtle_g_391;
+          reader_turtle_g_368.def = true;
+          obj365.methods["g"] = reader_turtle_g_368;
           lineNumber = 13;
           moduleName = "turtle";
           lineNumber = 12
@@ -1532,14 +1475,14 @@ function gracecode_turtle () {
               throw new GraceExceptionPacket(TypeErrorObject,
                     new GraceString("expected "
                     + "initial value of def 'g' to be of type Unknown"))
-          sourceObject = obj388;
+          sourceObject = obj365;
           lineNumber = 13
-          obj388.data["b"] = var_b__39__;
-          var reader_turtle_b_392 = function() {
+          obj365.data["b"] = var_b__39__;
+          var reader_turtle_b_369 = function() {
             return this.data["b"];
           }
-          reader_turtle_b_392.def = true;
-          obj388.methods["b"] = reader_turtle_b_392;
+          reader_turtle_b_369.def = true;
+          obj365.methods["b"] = reader_turtle_b_369;
           lineNumber = 14;
           moduleName = "turtle";
           lineNumber = 13
@@ -1550,8 +1493,8 @@ function gracecode_turtle () {
                     + "initial value of def 'b' to be of type Unknown"))
           superDepth = origSuperDepth;
         }
-        obj_init_388.apply(obj388, []);
-        return obj388
+        obj_init_365.apply(obj365, []);
+        return obj365
       } catch(e) {
         if ((e.exctype == 'return') && (e.target == returnTarget)) {
           return e.returnvalue;
@@ -1560,20 +1503,20 @@ function gracecode_turtle () {
         }
       }
     }
-    func387.paramCounts = [
+    func364.paramCounts = [
       1,
       1,
       1,
     ];
-    func387.variableArities = [
+    func364.variableArities = [
       false,
       false,
       false,
     ];
-    obj385.methods["r()g()b"] = func387;
-    func387.definitionLine = 10;
-    func387.definitionModule = "turtle";
-    var func393 = function(argcv) {
+    obj362.methods["r()g()b"] = func364;
+    func364.definitionLine = 10;
+    func364.definitionModule = "turtle";
+    var func370 = function(argcv) {
       var curarg = 1;
       var var_r__39__ = arguments[curarg];
       curarg++;
@@ -1585,30 +1528,30 @@ function gracecode_turtle () {
       var returnTarget = invocationCount;
       invocationCount++;
       try {
-        var obj394 = Grace_allocObject();
-        obj394.definitionModule = "turtle";
-        obj394.definitionLine = 10;
-        var inho394 = inheritingObject;
-        while (inho394.superobj) inho394 = inho394.superobj;
-        inho394.superobj = obj394;
-        obj394.data = inheritingObject.data;
-        obj394.outer = this;
-        var reader_turtle_outer_395 = function() {
+        var obj371 = Grace_allocObject();
+        obj371.definitionModule = "turtle";
+        obj371.definitionLine = 10;
+        var inho371 = inheritingObject;
+        while (inho371.superobj) inho371 = inho371.superobj;
+        inho371.superobj = obj371;
+        obj371.data = inheritingObject.data;
+        obj371.outer = this;
+        var reader_turtle_outer_372 = function() {
           return this.outer;
         }
-        obj394.methods["outer"] = reader_turtle_outer_395;
-        function obj_init_394() {
+        obj371.methods["outer"] = reader_turtle_outer_372;
+        function obj_init_371() {
           var origSuperDepth = superDepth;
-          superDepth = obj394;
-          obj394.annotations = [];
-          sourceObject = obj394;
+          superDepth = obj371;
+          obj371.annotations = [];
+          sourceObject = obj371;
           lineNumber = 11
-          obj394.data["r"] = var_r__39__;
-          var reader_turtle_r_396 = function() {
+          obj371.data["r"] = var_r__39__;
+          var reader_turtle_r_373 = function() {
             return this.data["r"];
           }
-          reader_turtle_r_396.def = true;
-          obj394.methods["r"] = reader_turtle_r_396;
+          reader_turtle_r_373.def = true;
+          obj371.methods["r"] = reader_turtle_r_373;
           lineNumber = 12;
           moduleName = "turtle";
           lineNumber = 11
@@ -1617,14 +1560,14 @@ function gracecode_turtle () {
               throw new GraceExceptionPacket(TypeErrorObject,
                     new GraceString("expected "
                     + "initial value of def 'r' to be of type Unknown"))
-          sourceObject = obj394;
+          sourceObject = obj371;
           lineNumber = 12
-          obj394.data["g"] = var_g__39__;
-          var reader_turtle_g_397 = function() {
+          obj371.data["g"] = var_g__39__;
+          var reader_turtle_g_374 = function() {
             return this.data["g"];
           }
-          reader_turtle_g_397.def = true;
-          obj394.methods["g"] = reader_turtle_g_397;
+          reader_turtle_g_374.def = true;
+          obj371.methods["g"] = reader_turtle_g_374;
           lineNumber = 13;
           moduleName = "turtle";
           lineNumber = 12
@@ -1633,14 +1576,14 @@ function gracecode_turtle () {
               throw new GraceExceptionPacket(TypeErrorObject,
                     new GraceString("expected "
                     + "initial value of def 'g' to be of type Unknown"))
-          sourceObject = obj394;
+          sourceObject = obj371;
           lineNumber = 13
-          obj394.data["b"] = var_b__39__;
-          var reader_turtle_b_398 = function() {
+          obj371.data["b"] = var_b__39__;
+          var reader_turtle_b_375 = function() {
             return this.data["b"];
           }
-          reader_turtle_b_398.def = true;
-          obj394.methods["b"] = reader_turtle_b_398;
+          reader_turtle_b_375.def = true;
+          obj371.methods["b"] = reader_turtle_b_375;
           lineNumber = 14;
           moduleName = "turtle";
           lineNumber = 13
@@ -1651,8 +1594,8 @@ function gracecode_turtle () {
                     + "initial value of def 'b' to be of type Unknown"))
           superDepth = origSuperDepth;
         }
-        obj_init_394.apply(inheritingObject, []);
-        return obj394
+        obj_init_371.apply(inheritingObject, []);
+        return obj371
       } catch(e) {
         if ((e.exctype == 'return') && (e.target == returnTarget)) {
           return e.returnvalue;
@@ -1661,16 +1604,16 @@ function gracecode_turtle () {
         }
       }
     }
-    obj385.methods["r()g()b()object"] = func393;
-    var func399 = function(argcv) {
+    obj362.methods["r()g()b()object"] = func370;
+    var func376 = function(argcv) {
       var curarg = 1;
       var returnTarget = invocationCount;
       invocationCount++;
       moduleName = "turtle";
       try {
         lineNumber = 10
-        var string400 = new GraceString("class colour");
-        return string400
+        var string377 = new GraceString("class colour");
+        return string377
       } catch(e) {
         if ((e.exctype == 'return') && (e.target == returnTarget)) {
           return e.returnvalue;
@@ -1679,26 +1622,26 @@ function gracecode_turtle () {
         }
       }
     }
-    func399.paramCounts = [
+    func376.paramCounts = [
     ];
-    func399.variableArities = [
+    func376.variableArities = [
     ];
-    obj385.methods["asDebugString"] = func399;
-    func399.definitionLine = 10;
-    func399.definitionModule = "turtle";
-    sourceObject = obj385;
-    sourceObject = obj385;
+    obj362.methods["asDebugString"] = func376;
+    func376.definitionLine = 10;
+    func376.definitionModule = "turtle";
+    sourceObject = obj362;
+    sourceObject = obj362;
     superDepth = origSuperDepth;
   }
-  obj_init_385.apply(obj385, []);
-  var var_colour = obj385;
+  obj_init_362.apply(obj362, []);
+  var var_colour = obj362;
   lineNumber = 15
-  var call401 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(0), new GraceNum(0));
-  var var_black = call401;
+  var call378 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(0), new GraceNum(0));
+  var var_black = call378;
   lineNumber = 10
-  var func402 = function(argcv) {
+  var func379 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func402.paramCounts[0])
+    if (argcv[0] !=  func379.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (black)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1714,15 +1657,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func402.paramCounts = [
+  func379.paramCounts = [
     0,
   ];
-  func402.variableArities = [
+  func379.variableArities = [
     false,
   ];
-  this.methods["black"] = func402;
-  func402.definitionLine = 10;
-  func402.definitionModule = "turtle";
+  this.methods["black"] = func379;
+  func379.definitionLine = 10;
+  func379.definitionModule = "turtle";
   lineNumber = 15;
   moduleName = "turtle";
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
@@ -1731,12 +1674,12 @@ function gracecode_turtle () {
             new GraceString("expected "
             + "initial value of def 'black' to be of type Unknown"))
   lineNumber = 16
-  var call403 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(0), new GraceNum(255));
-  var var_blue = call403;
+  var call380 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(0), new GraceNum(255));
+  var var_blue = call380;
   lineNumber = 10
-  var func404 = function(argcv) {
+  var func381 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func404.paramCounts[0])
+    if (argcv[0] !=  func381.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (blue)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1752,15 +1695,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func404.paramCounts = [
+  func381.paramCounts = [
     0,
   ];
-  func404.variableArities = [
+  func381.variableArities = [
     false,
   ];
-  this.methods["blue"] = func404;
-  func404.definitionLine = 10;
-  func404.definitionModule = "turtle";
+  this.methods["blue"] = func381;
+  func381.definitionLine = 10;
+  func381.definitionModule = "turtle";
   lineNumber = 16;
   moduleName = "turtle";
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
@@ -1769,12 +1712,12 @@ function gracecode_turtle () {
             new GraceString("expected "
             + "initial value of def 'blue' to be of type Unknown"))
   lineNumber = 17
-  var call405 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(255), new GraceNum(0));
-  var var_green = call405;
+  var call382 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(0), new GraceNum(255), new GraceNum(0));
+  var var_green = call382;
   lineNumber = 10
-  var func406 = function(argcv) {
+  var func383 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func406.paramCounts[0])
+    if (argcv[0] !=  func383.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (green)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1790,15 +1733,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func406.paramCounts = [
+  func383.paramCounts = [
     0,
   ];
-  func406.variableArities = [
+  func383.variableArities = [
     false,
   ];
-  this.methods["green"] = func406;
-  func406.definitionLine = 10;
-  func406.definitionModule = "turtle";
+  this.methods["green"] = func383;
+  func383.definitionLine = 10;
+  func383.definitionModule = "turtle";
   lineNumber = 17;
   moduleName = "turtle";
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
@@ -1807,12 +1750,12 @@ function gracecode_turtle () {
             new GraceString("expected "
             + "initial value of def 'green' to be of type Unknown"))
   lineNumber = 18
-  var call407 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(255), new GraceNum(0), new GraceNum(0));
-  var var_red = call407;
+  var call384 = callmethod(var_colour,"r()g()b", [1, 1, 1], new GraceNum(255), new GraceNum(0), new GraceNum(0));
+  var var_red = call384;
   lineNumber = 10
-  var func408 = function(argcv) {
+  var func385 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func408.paramCounts[0])
+    if (argcv[0] !=  func385.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (red)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1828,15 +1771,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func408.paramCounts = [
+  func385.paramCounts = [
     0,
   ];
-  func408.variableArities = [
+  func385.variableArities = [
     false,
   ];
-  this.methods["red"] = func408;
-  func408.definitionLine = 10;
-  func408.definitionModule = "turtle";
+  this.methods["red"] = func385;
+  func385.definitionLine = 10;
+  func385.definitionModule = "turtle";
   lineNumber = 18;
   moduleName = "turtle";
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
@@ -1848,9 +1791,9 @@ function gracecode_turtle () {
   lineNumber = 20
   var var_x = new GraceNum(150);
   lineNumber = 10
-  var func409 = function(argcv) {
+  var func386 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func409.paramCounts[0])
+    if (argcv[0] !=  func386.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (x)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1866,21 +1809,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func409.paramCounts = [
+  func386.paramCounts = [
     0,
   ];
-  func409.variableArities = [
+  func386.variableArities = [
     false,
   ];
-  this.methods["x"] = func409;
-  func409.definitionLine = 10;
-  func409.definitionModule = "turtle";
+  this.methods["x"] = func386;
+  func386.definitionLine = 10;
+  func386.definitionModule = "turtle";
   lineNumber = 10
-  var func410 = function(argcv) {
+  var func387 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func410.paramCounts[0])
+    if (argcv[0] !=  func387.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (x:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1896,15 +1839,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func410.paramCounts = [
+  func387.paramCounts = [
     1,
   ];
-  func410.variableArities = [
+  func387.variableArities = [
     false,
   ];
-  this.methods["x:="] = func410;
-  func410.definitionLine = 10;
-  func410.definitionModule = "turtle";
+  this.methods["x:="] = func387;
+  func387.definitionLine = 10;
+  func387.definitionModule = "turtle";
   lineNumber = 21;
   moduleName = "turtle";
   lineNumber = 20
@@ -1917,9 +1860,9 @@ function gracecode_turtle () {
   lineNumber = 21
   var var_y = new GraceNum(225);
   lineNumber = 10
-  var func411 = function(argcv) {
+  var func388 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func411.paramCounts[0])
+    if (argcv[0] !=  func388.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (y)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1935,21 +1878,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func411.paramCounts = [
+  func388.paramCounts = [
     0,
   ];
-  func411.variableArities = [
+  func388.variableArities = [
     false,
   ];
-  this.methods["y"] = func411;
-  func411.definitionLine = 10;
-  func411.definitionModule = "turtle";
+  this.methods["y"] = func388;
+  func388.definitionLine = 10;
+  func388.definitionModule = "turtle";
   lineNumber = 10
-  var func412 = function(argcv) {
+  var func389 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func412.paramCounts[0])
+    if (argcv[0] !=  func389.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (y:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -1965,15 +1908,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func412.paramCounts = [
+  func389.paramCounts = [
     1,
   ];
-  func412.variableArities = [
+  func389.variableArities = [
     false,
   ];
-  this.methods["y:="] = func412;
-  func412.definitionLine = 10;
-  func412.definitionModule = "turtle";
+  this.methods["y:="] = func389;
+  func389.definitionLine = 10;
+  func389.definitionModule = "turtle";
   lineNumber = 22;
   moduleName = "turtle";
   lineNumber = 21
@@ -1984,12 +1927,12 @@ function gracecode_turtle () {
             + "initial value of var 'y' to be of type Unknown"))
   lineNumber = 23
   lineNumber = 22
-  var bool413 = new GraceBoolean(false)
-  var var_started = bool413;
+  var bool390 = new GraceBoolean(false)
+  var var_started = bool390;
   lineNumber = 10
-  var func414 = function(argcv) {
+  var func391 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func414.paramCounts[0])
+    if (argcv[0] !=  func391.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (started)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2005,21 +1948,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func414.paramCounts = [
+  func391.paramCounts = [
     0,
   ];
-  func414.variableArities = [
+  func391.variableArities = [
     false,
   ];
-  this.methods["started"] = func414;
-  func414.definitionLine = 10;
-  func414.definitionModule = "turtle";
+  this.methods["started"] = func391;
+  func391.definitionLine = 10;
+  func391.definitionModule = "turtle";
   lineNumber = 10
-  var func415 = function(argcv) {
+  var func392 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func415.paramCounts[0])
+    if (argcv[0] !=  func392.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (started:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2035,15 +1978,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func415.paramCounts = [
+  func392.paramCounts = [
     1,
   ];
-  func415.variableArities = [
+  func392.variableArities = [
     false,
   ];
-  this.methods["started:="] = func415;
-  func415.definitionLine = 10;
-  func415.definitionModule = "turtle";
+  this.methods["started:="] = func392;
+  func392.definitionLine = 10;
+  func392.definitionModule = "turtle";
   lineNumber = 23;
   moduleName = "turtle";
   lineNumber = 22
@@ -2054,12 +1997,12 @@ function gracecode_turtle () {
             + "initial value of var 'started' to be of type Unknown"))
   lineNumber = 24
   lineNumber = 23
-  var call416 = callmethod(new GraceNum(1),"prefix-", [0]);
-  var var_maxActionsDrawn = call416;
+  var call393 = callmethod(new GraceNum(1),"prefix-", [0]);
+  var var_maxActionsDrawn = call393;
   lineNumber = 10
-  var func417 = function(argcv) {
+  var func394 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func417.paramCounts[0])
+    if (argcv[0] !=  func394.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (maxActionsDrawn)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2075,21 +2018,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func417.paramCounts = [
+  func394.paramCounts = [
     0,
   ];
-  func417.variableArities = [
+  func394.variableArities = [
     false,
   ];
-  this.methods["maxActionsDrawn"] = func417;
-  func417.definitionLine = 10;
-  func417.definitionModule = "turtle";
+  this.methods["maxActionsDrawn"] = func394;
+  func394.definitionLine = 10;
+  func394.definitionModule = "turtle";
   lineNumber = 10
-  var func418 = function(argcv) {
+  var func395 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func418.paramCounts[0])
+    if (argcv[0] !=  func395.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (maxActionsDrawn:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2105,15 +2048,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func418.paramCounts = [
+  func395.paramCounts = [
     1,
   ];
-  func418.variableArities = [
+  func395.variableArities = [
     false,
   ];
-  this.methods["maxActionsDrawn:="] = func418;
-  func418.definitionLine = 10;
-  func418.definitionModule = "turtle";
+  this.methods["maxActionsDrawn:="] = func395;
+  func395.definitionLine = 10;
+  func395.definitionModule = "turtle";
   lineNumber = 24;
   moduleName = "turtle";
   lineNumber = 23
@@ -2126,9 +2069,9 @@ function gracecode_turtle () {
   lineNumber = 24
   var var_delay = new GraceNum(1);
   lineNumber = 10
-  var func419 = function(argcv) {
+  var func396 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func419.paramCounts[0])
+    if (argcv[0] !=  func396.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (delay)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2144,21 +2087,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func419.paramCounts = [
+  func396.paramCounts = [
     0,
   ];
-  func419.variableArities = [
+  func396.variableArities = [
     false,
   ];
-  this.methods["delay"] = func419;
-  func419.definitionLine = 10;
-  func419.definitionModule = "turtle";
+  this.methods["delay"] = func396;
+  func396.definitionLine = 10;
+  func396.definitionModule = "turtle";
   lineNumber = 10
-  var func420 = function(argcv) {
+  var func397 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func420.paramCounts[0])
+    if (argcv[0] !=  func397.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (delay:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2174,15 +2117,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func420.paramCounts = [
+  func397.paramCounts = [
     1,
   ];
-  func420.variableArities = [
+  func397.variableArities = [
     false,
   ];
-  this.methods["delay:="] = func420;
-  func420.definitionLine = 10;
-  func420.definitionModule = "turtle";
+  this.methods["delay:="] = func397;
+  func397.definitionLine = 10;
+  func397.definitionModule = "turtle";
   lineNumber = 26;
   moduleName = "turtle";
   lineNumber = 24
@@ -2196,9 +2139,9 @@ function gracecode_turtle () {
   lineNumber = 26
   var var_turtleAngle = new GraceNum(0);
   lineNumber = 10
-  var func421 = function(argcv) {
+  var func398 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func421.paramCounts[0])
+    if (argcv[0] !=  func398.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (turtleAngle)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2214,21 +2157,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func421.paramCounts = [
+  func398.paramCounts = [
     0,
   ];
-  func421.variableArities = [
+  func398.variableArities = [
     false,
   ];
-  this.methods["turtleAngle"] = func421;
-  func421.definitionLine = 10;
-  func421.definitionModule = "turtle";
+  this.methods["turtleAngle"] = func398;
+  func398.definitionLine = 10;
+  func398.definitionModule = "turtle";
   lineNumber = 10
-  var func422 = function(argcv) {
+  var func399 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func422.paramCounts[0])
+    if (argcv[0] !=  func399.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (turtleAngle:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2244,15 +2187,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func422.paramCounts = [
+  func399.paramCounts = [
     1,
   ];
-  func422.variableArities = [
+  func399.variableArities = [
     false,
   ];
-  this.methods["turtleAngle:="] = func422;
-  func422.definitionLine = 10;
-  func422.definitionModule = "turtle";
+  this.methods["turtleAngle:="] = func399;
+  func399.definitionLine = 10;
+  func399.definitionModule = "turtle";
   lineNumber = 29;
   moduleName = "turtle";
   lineNumber = 26
@@ -2264,12 +2207,12 @@ function gracecode_turtle () {
   lineNumber = 29
   lineNumber = 31
   lineNumber = 29
-  var call423 = callmethod(var_collections,"list", [0]);
-  var call424 = callmethod(call423,"new", [0]);
-  var var_steps = call424;
-  var func425 = function(argcv) {
+  var call400 = callmethod(var_collections,"list", [0]);
+  var call401 = callmethod(call400,"new", [0]);
+  var var_steps = call401;
+  var func402 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func425.paramCounts[0])
+    if (argcv[0] !=  func402.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (steps)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2284,15 +2227,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func425.paramCounts = [
+  func402.paramCounts = [
     0,
   ];
-  func425.variableArities = [
+  func402.variableArities = [
     false,
   ];
-  this.methods["steps"] = func425;
-  func425.definitionLine = 29;
-  func425.definitionModule = "turtle";
+  this.methods["steps"] = func402;
+  func402.definitionLine = 29;
+  func402.definitionModule = "turtle";
   lineNumber = 31;
   moduleName = "turtle";
   lineNumber = 29
@@ -2304,12 +2247,12 @@ function gracecode_turtle () {
   lineNumber = 31
   lineNumber = 33
   lineNumber = 31
-  var call426 = callmethod(var_collections,"list", [0]);
-  var call427 = callmethod(call426,"new", [0]);
-  var var_stages = call427;
-  var func428 = function(argcv) {
+  var call403 = callmethod(var_collections,"list", [0]);
+  var call404 = callmethod(call403,"new", [0]);
+  var var_stages = call404;
+  var func405 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func428.paramCounts[0])
+    if (argcv[0] !=  func405.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (stages)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2324,15 +2267,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func428.paramCounts = [
+  func405.paramCounts = [
     0,
   ];
-  func428.variableArities = [
+  func405.variableArities = [
     false,
   ];
-  this.methods["stages"] = func428;
-  func428.definitionLine = 31;
-  func428.definitionModule = "turtle";
+  this.methods["stages"] = func405;
+  func405.definitionLine = 31;
+  func405.definitionModule = "turtle";
   lineNumber = 33;
   moduleName = "turtle";
   lineNumber = 31
@@ -2346,9 +2289,9 @@ function gracecode_turtle () {
   lineNumber = 33
   var var_PI = new GraceNum(3.14159);
   lineNumber = 31
-  var func429 = function(argcv) {
+  var func406 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func429.paramCounts[0])
+    if (argcv[0] !=  func406.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (PI)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2364,15 +2307,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func429.paramCounts = [
+  func406.paramCounts = [
     0,
   ];
-  func429.variableArities = [
+  func406.variableArities = [
     false,
   ];
-  this.methods["PI"] = func429;
-  func429.definitionLine = 31;
-  func429.definitionModule = "turtle";
+  this.methods["PI"] = func406;
+  func406.definitionLine = 31;
+  func406.definitionModule = "turtle";
   lineNumber = 35;
   moduleName = "turtle";
   lineNumber = 33
@@ -2385,9 +2328,9 @@ function gracecode_turtle () {
   lineNumber = 55
   var var_backingCanvas;
   lineNumber = 31
-  var func430 = function(argcv) {
+  var func407 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func430.paramCounts[0])
+    if (argcv[0] !=  func407.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (backingCanvas)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2403,21 +2346,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func430.paramCounts = [
+  func407.paramCounts = [
     0,
   ];
-  func430.variableArities = [
+  func407.variableArities = [
     false,
   ];
-  this.methods["backingCanvas"] = func430;
-  func430.definitionLine = 31;
-  func430.definitionModule = "turtle";
+  this.methods["backingCanvas"] = func407;
+  func407.definitionLine = 31;
+  func407.definitionModule = "turtle";
   lineNumber = 31
-  var func431 = function(argcv) {
+  var func408 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func431.paramCounts[0])
+    if (argcv[0] !=  func408.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (backingCanvas:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2433,23 +2376,23 @@ function gracecode_turtle () {
       }
     }
   }
-  func431.paramCounts = [
+  func408.paramCounts = [
     1,
   ];
-  func431.variableArities = [
+  func408.variableArities = [
     false,
   ];
-  this.methods["backingCanvas:="] = func431;
-  func431.definitionLine = 31;
-  func431.definitionModule = "turtle";
+  this.methods["backingCanvas:="] = func408;
+  func408.definitionLine = 31;
+  func408.definitionModule = "turtle";
   lineNumber = 57
   lineNumber = 55
-  var bool432 = new GraceBoolean(true)
-  var var_drawingEnabled = bool432;
+  var bool409 = new GraceBoolean(true)
+  var var_drawingEnabled = bool409;
   lineNumber = 31
-  var func433 = function(argcv) {
+  var func410 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func433.paramCounts[0])
+    if (argcv[0] !=  func410.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (drawingEnabled)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2465,21 +2408,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func433.paramCounts = [
+  func410.paramCounts = [
     0,
   ];
-  func433.variableArities = [
+  func410.variableArities = [
     false,
   ];
-  this.methods["drawingEnabled"] = func433;
-  func433.definitionLine = 31;
-  func433.definitionModule = "turtle";
+  this.methods["drawingEnabled"] = func410;
+  func410.definitionLine = 31;
+  func410.definitionModule = "turtle";
   lineNumber = 31
-  var func434 = function(argcv) {
+  var func411 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func434.paramCounts[0])
+    if (argcv[0] !=  func411.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (drawingEnabled:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2495,15 +2438,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func434.paramCounts = [
+  func411.paramCounts = [
     1,
   ];
-  func434.variableArities = [
+  func411.variableArities = [
     false,
   ];
-  this.methods["drawingEnabled:="] = func434;
-  func434.definitionLine = 31;
-  func434.definitionModule = "turtle";
+  this.methods["drawingEnabled:="] = func411;
+  func411.definitionLine = 31;
+  func411.definitionModule = "turtle";
   lineNumber = 57;
   moduleName = "turtle";
   lineNumber = 55
@@ -2515,12 +2458,12 @@ function gracecode_turtle () {
   lineNumber = 57
   lineNumber = 154
   lineNumber = 153
-  var bool435 = new GraceBoolean(false)
-  var var_initialised = bool435;
+  var bool412 = new GraceBoolean(false)
+  var var_initialised = bool412;
   lineNumber = 31
-  var func436 = function(argcv) {
+  var func413 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func436.paramCounts[0])
+    if (argcv[0] !=  func413.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialised)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2536,21 +2479,21 @@ function gracecode_turtle () {
       }
     }
   }
-  func436.paramCounts = [
+  func413.paramCounts = [
     0,
   ];
-  func436.variableArities = [
+  func413.variableArities = [
     false,
   ];
-  this.methods["initialised"] = func436;
-  func436.definitionLine = 31;
-  func436.definitionModule = "turtle";
+  this.methods["initialised"] = func413;
+  func413.definitionLine = 31;
+  func413.definitionModule = "turtle";
   lineNumber = 31
-  var func437 = function(argcv) {
+  var func414 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func437.paramCounts[0])
+    if (argcv[0] !=  func414.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialised:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -2566,15 +2509,15 @@ function gracecode_turtle () {
       }
     }
   }
-  func437.paramCounts = [
+  func414.paramCounts = [
     1,
   ];
-  func437.variableArities = [
+  func414.variableArities = [
     false,
   ];
-  this.methods["initialised:="] = func437;
-  func437.definitionLine = 31;
-  func437.definitionModule = "turtle";
+  this.methods["initialised:="] = func414;
+  func414.definitionLine = 31;
+  func414.definitionModule = "turtle";
   lineNumber = 154;
   moduleName = "turtle";
   lineNumber = 153
@@ -2590,7 +2533,7 @@ gracecode_turtle.imports = [
 'mgcollections',
 ];
 if (gctCache)
-  gctCache['turtle'] = "path:\n turtle\nclasses:\n colour\npublic:\n document\n document:=\n canvas\n canvas:=\n ctx\n ctx:=\n trig\n trig:=\n colour\n black\n blue\n green\n red\n x\n x:=\n y\n y:=\n started\n started:=\n maxActionsDrawn\n maxActionsDrawn:=\n delay\n delay:=\n turtleAngle\n turtleAngle:=\n steps\n stages\n PI\n drawTurtle\n backingCanvas\n backingCanvas:=\n drawingEnabled\n drawingEnabled:=\n move\n turnRight\n turnLeft\n penUp\n penDown\n initialised\n initialised:=\n initialise\n start\nconfidential:\nfresh-methods:\nconstructors-of:colour:\n r()g()b\nmethods-of:colour.r()g()b:\n b\n g\n r\nmodules:\n mgcollections\n";
+  gctCache['turtle'] = "methods-of:colour.r()g()b:\n r\n b\n g\npath:\n turtle\nclasses:\n colour\npublic:\n document\n document:=\n canvas\n canvas:=\n ctx\n ctx:=\n trig\n trig:=\n colour\n black\n blue\n green\n red\n x\n x:=\n y\n y:=\n started\n started:=\n maxActionsDrawn\n maxActionsDrawn:=\n delay\n delay:=\n turtleAngle\n turtleAngle:=\n steps\n stages\n PI\n drawTurtle\n backingCanvas\n backingCanvas:=\n drawingEnabled\n drawingEnabled:=\n move\n turnRight\n turnLeft\n penUp\n penDown\n initialised\n initialised:=\n initialise\n start\nconfidential:\nfresh-methods:\nmodules:\n mgcollections\nconstructors-of:colour:\n r()g()b\n";
 if (originalSourceLines) {
   originalSourceLines["turtle"] = [
     "import \"dom\" as dom",
@@ -2752,13 +2695,13 @@ if (originalSourceLines) {
     "    }",
     "    document := dom.document",
     "    // Activate the canvas tab if it isn't already",
-    "    def ts = document.getElementById(\"output-select\")",
-    "    for (0..(ts.options.length-1)) do {i->",
-    "        if (ts.options.item(i).value == \"canvas\") then {",
-    "            ts.selectedIndex := i",
-    "            dom.window.outputswitch",
-    "        }",
-    "    }",
+    "    // def ts = document.getElementById(\"output-select\")",
+    "    // for (0..(ts.options.length-1)) do {i->",
+    "    //    if (ts.options.item(i).value == \"canvas\") then {",
+    "    //        ts.selectedIndex := i",
+    "    //        dom.window.outputswitch",
+    "    //    }",
+    "    //}",
     "    initialised := true",
     "    trig := dom.window.Math",
     "    canvas := document.getElementById(\"standard-canvas\")",
