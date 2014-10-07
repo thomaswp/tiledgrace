@@ -216,6 +216,32 @@ dialects.logo = {
 for (var k in dialects.logo.methods)
     dialects.logo.methods[k].category = "Turtle";
 extendDialect("logo", "StandardGrace");
+
+
+dialects.hoc = {
+    methods: {
+        "goToX()Y": {
+            name: "goToX()Y",
+            parts: [
+				{name: "goToX", args: ["Number"], description: "The X coordinate"}, 
+				{name:"Y", args: ["Number"], description: "The Y coordinate"}
+			],
+            description: "Moves Alonzo to the given coordinates",
+            returns: "Done"
+        },
+		"turnAround": {
+            name: "turnAround",
+            parts: [{name: "turnAround", args: []}],
+            description: "Turns Alonzo around",
+            returns: "Done"
+        },
+    }
+};
+for (var k in dialects.hoc.methods)
+    dialects.hoc.methods[k].category = "Hour of Code";
+extendDialect("hoc", "StandardGrace");
+
+
 dialects.loopinvariant = {
     methods: {
         "print": {

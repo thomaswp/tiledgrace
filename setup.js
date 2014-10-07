@@ -250,12 +250,17 @@ bgMinigrace.postMessage({action: "importFile",
 bgMinigrace.postMessage({action: "importFile",
         modname: "sniff",
         url: "sniff.js"});
+bgMinigrace.postMessage({action: "importFile",
+        modname: "hoc",
+        url: "hoc.js"});
 bgMinigrace.postMessage({action: "importGCT", modname: "logo",
     gct: gctCache['logo']});
 bgMinigrace.postMessage({action: "importGCT", modname: "loopinvariant",
     gct: gctCache['loopinvariant']});
 bgMinigrace.postMessage({action: "importGCT", modname: "sniff",
     gct: gctCache['sniff']});
+bgMinigrace.postMessage({action: "importGCT", modname: "hoc",
+    gct: gctCache['hoc']});
 document.getElementById('code_txt_real').style.display = 'block';
 var editor = ace.edit("code_txt_real");
 var GraceMode = require("ace/mode/grace").Mode;
