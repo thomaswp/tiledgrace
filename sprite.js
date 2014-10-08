@@ -53,6 +53,7 @@ function Sprite(path) {
 		if (this.message.length > 0) {
 			ctx.textAlign = "center";
 			ctx.font = "bold 14pt Arial";
+			ctx.fillStyle = "black";
 			var maxWidth = 150;
 			var lines = wrapText(ctx, this.message, maxWidth);
 			var height = 20;
@@ -120,7 +121,7 @@ function Sprite(path) {
 		x *= scale; y *= scale;
 		sprite.x = x;
 		sprite.y = y;
-		if (sprite.penDown) {
+		if (sprite.penDown == true) {
 			sprite.penTrails[sprite.penTrails.length - 1].push([sprite.x, sprite.y]);
 		}
 	};

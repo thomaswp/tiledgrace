@@ -399,7 +399,7 @@ function findErroneousTiles(reasons) {
         if (numbers[i].value == "") {
             tiles.push(numbers[i]);
             reasons.push("You need to write a number here");
-        } else if (/[^0-9.]/.test(numbers[i].value)) {
+        } else if (/[^-0-9.]/.test(numbers[i].value)) {
             tiles.push(numbers[i]);
             reasons.push("This is not a valid number");
         }

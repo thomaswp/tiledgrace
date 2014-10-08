@@ -543,10 +543,10 @@ function loadJSON(str) {
     var dialect = document.getElementById('dialect');
     for (var i=0; i<dialect.options.length; i++) {
         if (dialect.options[i].value == obj.dialect) {
-            if (dialect.selectedIndex != i) {
+            //if (dialect.selectedIndex != i) {
                 dialect.selectedIndex = i;
                 changeDialect();
-            }
+            //}
         }
     }
     if (!obj.dialect) {

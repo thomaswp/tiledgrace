@@ -235,6 +235,45 @@ dialects.hoc = {
             description: "Turns Alonzo around",
             returns: "Done"
         },
+		"say": {
+			name: "say",
+			parts: [{name: "say", args: ["String"], description: "The message for Alonzo to say"}],
+			description: "Have Alonzo say something",
+			returns: "Done"
+		},
+		"pickRandomBetween()And" : {
+			name: "pickRandomBetween()And",
+			parts: [
+				{name: "pickRandomBetween", args: ["Number"], description: "The minimum value"},
+				{name: "And", args: ["Number"], description: "The maximum value"}
+			],
+			description: "Pick a random number between two numbers",
+			returns: "Number"
+		},
+		"penDown": {
+            name: "penDown",
+            parts: [{name: "penDown", args: []}],
+            description: "Starts drawing under Alonzo",
+            returns: "Done"
+        },
+		"penUp": {
+            name: "penUp",
+            parts: [{name: "penUp", args: []}],
+            description: "Stops drawing under Alonzo",
+            returns: "Done"
+        },
+		"clear": {
+            name: "clear",
+            parts: [{name: "clear", args: []}],
+            description: "Clears all pen drawings",
+            returns: "Done"
+        },
+		"whenClicked": {
+            name: "whenClicked",
+            parts: [{name: "whenClicked", args: []}],
+            description: "Clears all pen drawings",
+            returns: "Done"
+        },
     }
 };
 for (var k in dialects.hoc.methods)

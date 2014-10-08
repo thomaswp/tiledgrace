@@ -42,6 +42,16 @@ method penUp {
     sprite.penUp
 }
 
+method doOnClick {
+    initialize
+    print "doOnClicked"
+    whenClicked
+}
+
+method whenClicked {
+    print "whenClicked"
+}
+
 method initialize {
     if (initialized) then {
         return false
