@@ -67,6 +67,7 @@
      <textarea id="stderr_txt" style="clear:both;" cols="100" rows="5"></textarea>
      <textarea id="gracecode" cols="100" rows="10"></textarea>
      <canvas id="overlay-canvas" width="500" height="500"></canvas>
+	 <div id="sprite"></div>
     <div id="acknowledgements"><a href="https://github.com/mwh/minigrace">Minigrace</a> is distributed under the GNU GPL version 3. <a href="http://www.entypo.com/">Entypo</a> pictograms by Daniel Bruce.</div>
      <script type="text/javascript" src="main.js"></script>
      <script type="text/javascript" src="overlay.js"></script>
@@ -85,16 +86,18 @@
 	 <script type="text/javascript" src="snapjs.js"></script>
 	 <script type="text/javascript" src="sprite.js"></script>
 	 <script type="text/javascript">
+		window.document = document;
 		var canvas = document.getElementById("standard-canvas");
-		var sprite = document.createElement("div");
 		SnapJS.start(canvas);
 		var alonzo = new Sprite("img/alonzo.png");
 		alonzo.width = 397 / 5;
 		alonzo.height = 472 / 5;
 		SnapJS.addSprite(alonzo);
+		
+		var sprite = document.getElementById("sprite");
 		var methods = ["goTo", "pickRandom", "turnAround", "say", "clear", "penDown", "penUp"];
 		for (var i = 0; i < methods.length; i++) {
-			sprite[methods[0]] = alonzo[methods[0]];
+			sprite[methods[i]] = alonzo[methods[i]];
 		}
 	 </script>
     <div id="code_txt_real"></div>
