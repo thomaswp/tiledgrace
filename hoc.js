@@ -47,11 +47,11 @@ function gracecode_hoc () {
     var var_min = arguments[curarg];
     curarg++;
     if (argcv[0] !=  func3.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (pickRandomBetween)"));
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (pickRandom)"));
     var var_max = arguments[curarg];
     curarg++;
     if (argcv[1] !=  func3.paramCounts[1])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 2 (And)"));
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 2 (To)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
@@ -79,7 +79,7 @@ function gracecode_hoc () {
     false,
     false,
   ];
-  this.methods["pickRandomBetween()And"] = func3;
+  this.methods["pickRandom()To"] = func3;
   func3.definitionLine = 15;
   func3.definitionModule = "hoc";
   lineNumber = 20
@@ -590,7 +590,7 @@ gracecode_hoc.imports = [
 'StandardPrelude',
 ];
 if (gctCache)
-  gctCache['hoc'] = "public:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n goToX()Y\n pickRandomBetween()And\n turnAround\n say\n clear\n penDown\n penUp\n doOnClick\n whenClicked\n initialize\nconfidential:\nmodules:\n StandardPrelude\n mgcollections\nfresh-methods:\npath:\n hoc\nclasses:\n";
+  gctCache['hoc'] = "path:\n hoc\nclasses:\npublic:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n doOnClick\n whenClicked\n initialize\nconfidential:\nfresh-methods:\nmodules:\n StandardPrelude\n mgcollections\n";
 if (originalSourceLines) {
   originalSourceLines["hoc"] = [
     "import \"dom\" as dom",
@@ -607,7 +607,7 @@ if (originalSourceLines) {
     "    sprite.goTo(x, y)",
     "}",
     "",
-    "method pickRandomBetween(min)And(max) {",
+    "method pickRandom(min)To(max) {",
     "    initialize",
     "    return sprite.pickRandom(min, max)",
     "}",
