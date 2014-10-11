@@ -268,12 +268,6 @@ dialects.hoc = {
             description: "Clears all pen drawings",
             returns: "Done"
         },
-		"whenClicked": {
-            name: "whenClicked",
-            parts: [{name: "whenClicked", args: []}],
-            description: "Clears all pen drawings",
-            returns: "Done"
-        },
     }
 };
 for (var k in dialects.hoc.methods)

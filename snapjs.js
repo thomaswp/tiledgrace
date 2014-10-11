@@ -1,18 +1,18 @@
 function SnapJS() { };
 
-SnapJS.aspect = 4 / 3.0;
+SnapJS.aspect = 1; //4 / 3.0;
 
 SnapJS.start = function(canvas) {
 	SnapJS.canvas = canvas;
 	SnapJS.sprites = [];
 	
-	var baseWidth = 800;
+	var baseWidth = 250;
 	$(canvas).attr("width", baseWidth);
 	$(canvas).attr("height", baseWidth / SnapJS.aspect);
 	
 	$(canvas).click(function(e) {
-		var x = e.pageX - $(canvas).position().left - SnapJS.canvas.width / 2;
-		var y = e.pageY - $(canvas).position().top - SnapJS.canvas.height / 2;
+		var x = e.pageX - $(canvas).position().left - SnapJS.canvas.clientWidth / 2;
+		var y = e.pageY - $(canvas).position().top - SnapJS.canvas.clientHeight / 2;
 		for (var i = 0; i < SnapJS.sprites.length; i++) {
 			SnapJS.sprites[i].doClick(x, y);
 		}
