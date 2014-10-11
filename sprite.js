@@ -64,16 +64,22 @@ function Sprite(path) {
 				y += height;
 			}
 		}
-		if (this.userCode != null) {
+		if (window.runningCode) {
 			ctx.textAlign = "left";
 			ctx.font = "14pt Arial";
+			ctx.fillStyle = "black";
 			var vx = 10, vy = 20;
-			for (var v in this.userCode) {
-				var value = this.userCode[v];
-				if (typeof(value) === "function") continue;
-				if (!isNaN(value)) value = Math.round(value * 1000) / 1000;
-				ctx.fillText(v + " = " + value, vx - ctx.canvas.width / 2, vy - ctx.canvas.height / 2);
-				vy += 20;
+			for (var v in runningCode.methods) {
+				var method = runningCode.methods[v];
+				if (!method.paramCounts || method.paramCounts[0] != 0) continue;
+				if (!runningCode.methods[v + ":="]) continue;
+				try {				
+					var value = method([0])["_value"];
+					if (typeof(value) === 'undefined') continue;
+					if (!isNaN(value)) value = Math.round(value * 1000) / 1000;
+					ctx.fillText(v + " = " + value, vx - ctx.canvas.clientWidth / 2, vy - ctx.canvas.clientHeight / 2);
+					vy += 20;
+				}  catch(e) { }
 			};
 		}
 	};
@@ -167,7 +173,10 @@ function Sprite(path) {
 		if (x >= this.x && x < this.x + this.width &&
 				y >= this.y && y < this.y + this.height) {
 			try {
-				if(this.userCode != null && this.userCode.whenClicked != null) this.userCode.whenClicked();
+				//if(this.userCode != null && this.userCode.whenClicked != null) this.userCode.whenClicked();
+				if (runningCode && runningCode.methods.whenClicked) {
+					runningCode.methods.whenClicked([0]);
+				}
 			} catch (e) {
 				console.log(e.message);
 			}
