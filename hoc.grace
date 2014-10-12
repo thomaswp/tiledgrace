@@ -44,15 +44,14 @@ method penUp {
     sprite.penUp
 }
 
+var last;
 method every(t)do(m) {
     initialize
-    if (whiles.contains(m)) then {
-        whiles.remove(m)
-        counts.remove(m)
+    if (m == last) then {
+        print "Same"
+    } else {
+        print "Different"
     }
-    whiles.put(m, t)
-    counts.put(m, t)
-    m.apply
 }
 
 method initialize {
@@ -63,16 +62,16 @@ method initialize {
     initialized := true
     sprite := document.getElementById("sprite")
     
-    def wait = 10
-    dom.while {true} waiting (wait) do {
-        for (counts) do { kvp ->
-            kvp.value -= wait
-            if (kvp.value < 0) then {
-                kvp.key.apply
-                kvp.value += whiles.get(kvp.key)
-            }
-        }
-    }
+    //def wait = 10
+    //dom.while {true} waiting (wait) do {
+    //    for (counts) do { kvp ->
+    //        kvp.value -= wait
+    //        if (kvp.value < 0) then {
+    //            kvp.key.apply
+    //            kvp.value += whiles.get(kvp.key)
+    //        }
+    //    }
+    //}
 }
 
 initialize
