@@ -49,7 +49,8 @@
          <option value="sniff">Sniff graphics
 		 <option value="hoc">Hour of Code
      </select>
-     <input type="button" onclick="alonzo.stop(); go()" value="Run" id="runbutton">
+     <input type="button" onclick="reset(); go()" value="Run" id="runbutton">
+	 <input type="button" onclick="reset()" value="Stop" id="stopbutton">
      <input type="button" onclick="toggleShrink()" value="Code View" id="viewbutton">
      <div id="indicator" style="display: inline-block; width: 16px; height: 16px; background: green;"></div>
      <a download="myprogram.grace" id="downloadlink">Download</a>
@@ -57,6 +58,7 @@
      <input type="button" value="Load sample" onclick="loadSample(document.getElementById('samples').value)" />
      <select id="samples">
          <option>Select sample</option>
+		 <option value="alonzo">Alonzo</option>
          <option value="fibonacci">Fibonacci loop</option>
          <option value="turtlehousec">Turtle house</option>
          <option value="sniffpong">Sniff pong</option>
@@ -99,6 +101,13 @@
 		for (var i = 0; i < methods.length; i++) {
 			sprite[methods[i]] = alonzo[methods[i]];
 		}
+		
+		var reset = function() {
+			alonzo.stop();
+			try {
+				runningCode.outer.methods.stop([0]);
+			} catch (E) { }
+		};
 	 </script>
     <div id="code_txt_real"></div>
     <script src="ace/ace.js"></script>

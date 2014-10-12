@@ -241,11 +241,11 @@ dialects.hoc = {
 			description: "Have Alonzo say something",
 			returns: "Done"
 		},
-		"pickRandomBetween()And" : {
-			name: "pickRandomBetween()And",
+		"pickRandom()To" : {
+			name: "pickRandom()To",
 			parts: [
-				{name: "pickRandomBetween", args: ["Number"], description: "The minimum value"},
-				{name: "And", args: ["Number"], description: "The maximum value"}
+				{name: "pickRandom", args: ["Number"], description: "The minimum value"},
+				{name: "To", args: ["Number"], description: "The maximum value"}
 			],
 			description: "Pick a random number between two numbers",
 			returns: "Number"
@@ -267,6 +267,39 @@ dialects.hoc = {
             parts: [{name: "clear", args: []}],
             description: "Clears all pen drawings",
             returns: "Done"
+        },
+		"whenClicked": {
+            name: "whenClicked",
+            parts: [
+                {name: "whenClicked", args: [
+                    {type: 'Block', returns: 'Any', multiline: true,
+                        description: "What should happen when the Alonzo is clicked."}
+                    ]}
+			],
+            returns: "Done",
+            multiline: true,
+            selfcall: true,
+            description: "Have something happen when Alonzo is clicked",
+            toplevel: true
+        },
+		"forever": {
+            name: "forever",
+            parts: [
+                {name: "forever", args: [
+                    {type: 'Block', returns: 'Any', multiline: true,
+                        description: "What should happen forever."}
+                    ]}
+			],
+            returns: "Done",
+            multiline: true,
+            selfcall: true,
+            description: "Do something forever",
+            toplevel: true
+        },
+		"wait": {
+            name: "wait",
+            parts: [{name: "wait", args: [{type: 'Number', description: "How many seconds to wait."}]}],
+            returns: "Done",
         },
     }
 };

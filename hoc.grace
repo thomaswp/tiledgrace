@@ -6,8 +6,11 @@ inherits StandardPrelude.methods
 var document
 var sprite
 var initialized := false
-var whiles := collections.map.new
-var counts := collections.map.new
+var foreverBlocks := collections.list.new
+var clickedBlocks := collections.list.new
+var delay := 0
+var running := true
+var clicked := false
 
 method goToX(x)Y(y) {
     initialize
@@ -44,14 +47,24 @@ method penUp {
     sprite.penUp
 }
 
-var last;
-method every(t)do(m) {
-    initialize
-    if (m == last) then {
-        print "Same"
-    } else {
-        print "Different"
+method doClick {
+    clicked := true
+}
+
+method whenClicked(m) {
+    clickedBlocks.push(m)
+}
+
+method wait(t) {
+    delay := t * 1000
+}
+
+method forever(m) {
+    if (foreverBlocks.size > 0) then {
+        foreverBlocks.pop
     }
+    foreverBlocks.push(m)
+    delay := 0
 }
 
 method initialize {
@@ -62,16 +75,25 @@ method initialize {
     initialized := true
     sprite := document.getElementById("sprite")
     
-    //def wait = 10
-    //dom.while {true} waiting (wait) do {
-    //    for (counts) do { kvp ->
-    //        kvp.value -= wait
-    //        if (kvp.value < 0) then {
-    //            kvp.key.apply
-    //            kvp.value += whiles.get(kvp.key)
-    //        }
-    //    }
-    //}
+    def tick = 5
+    dom.while {running} waiting (tick) do {
+        delay := delay - tick
+        if (delay <= 0) then {
+            for (foreverBlocks) do { step ->
+                step.apply
+            }
+        }
+        if (clicked) then {
+            for (clickedBlocks) do { step ->
+                step.apply
+            }
+        }
+        clicked := false
+    }
+}
+
+method stop {
+    running := false
 }
 
 initialize

@@ -1,7 +1,7 @@
 function gracecode_hoc () {
   this.definitionModule = "hoc";
   this.definitionLine = 0;
-  lineNumber = 12
+  lineNumber = 15
   var func0 = function(argcv) {
     var curarg = 1;
     var var_x = arguments[curarg];
@@ -16,10 +16,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 13
+      lineNumber = 16
       onSelf = true;
       var call1 = callmethod(this, "initialize", [0]);
-      lineNumber = 14
+      lineNumber = 17
       var call2 = callmethod(var_sprite,"goTo", [2], var_x, var_y);
       return call2
     } catch(e) {
@@ -39,9 +39,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["goToX()Y"] = func0;
-  func0.definitionLine = 12;
+  func0.definitionLine = 15;
   func0.definitionModule = "hoc";
-  lineNumber = 17
+  lineNumber = 20
   var func3 = function(argcv) {
     var curarg = 1;
     var var_min = arguments[curarg];
@@ -56,10 +56,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 18
+      lineNumber = 21
       onSelf = true;
       var call4 = callmethod(this, "initialize", [0]);
-      lineNumber = 19
+      lineNumber = 22
       var call5 = callmethod(var_sprite,"pickRandom", [2], var_min, var_max);
       return call5
       return undefined
@@ -80,9 +80,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["pickRandom()To"] = func3;
-  func3.definitionLine = 17;
+  func3.definitionLine = 20;
   func3.definitionModule = "hoc";
-  lineNumber = 22
+  lineNumber = 25
   var func6 = function(argcv) {
     var curarg = 1;
     if (argcv[0] !=  func6.paramCounts[0])
@@ -91,10 +91,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 23
+      lineNumber = 26
       onSelf = true;
       var call7 = callmethod(this, "initialize", [0]);
-      lineNumber = 24
+      lineNumber = 27
       var call8 = callmethod(var_sprite,"turnAround", [0]);
       return call8
     } catch(e) {
@@ -112,9 +112,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["turnAround"] = func6;
-  func6.definitionLine = 22;
+  func6.definitionLine = 25;
   func6.definitionModule = "hoc";
-  lineNumber = 27
+  lineNumber = 30
   var func9 = function(argcv) {
     var curarg = 1;
     var var_text = arguments[curarg];
@@ -125,10 +125,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 28
+      lineNumber = 31
       onSelf = true;
       var call10 = callmethod(this, "initialize", [0]);
-      lineNumber = 29
+      lineNumber = 32
       var call11 = callmethod(var_sprite,"say", [1], var_text);
       return call11
     } catch(e) {
@@ -146,9 +146,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["say"] = func9;
-  func9.definitionLine = 27;
+  func9.definitionLine = 30;
   func9.definitionModule = "hoc";
-  lineNumber = 32
+  lineNumber = 35
   var func12 = function(argcv) {
     var curarg = 1;
     if (argcv[0] !=  func12.paramCounts[0])
@@ -157,10 +157,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 33
+      lineNumber = 36
       onSelf = true;
       var call13 = callmethod(this, "initialize", [0]);
-      lineNumber = 34
+      lineNumber = 37
       var call14 = callmethod(var_sprite,"clear", [0]);
       return call14
     } catch(e) {
@@ -178,9 +178,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["clear"] = func12;
-  func12.definitionLine = 32;
+  func12.definitionLine = 35;
   func12.definitionModule = "hoc";
-  lineNumber = 37
+  lineNumber = 40
   var func15 = function(argcv) {
     var curarg = 1;
     if (argcv[0] !=  func15.paramCounts[0])
@@ -189,10 +189,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 38
+      lineNumber = 41
       onSelf = true;
       var call16 = callmethod(this, "initialize", [0]);
-      lineNumber = 39
+      lineNumber = 42
       var call17 = callmethod(var_sprite,"penDown", [0]);
       return call17
     } catch(e) {
@@ -210,9 +210,9 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["penDown"] = func15;
-  func15.definitionLine = 37;
+  func15.definitionLine = 40;
   func15.definitionModule = "hoc";
-  lineNumber = 42
+  lineNumber = 45
   var func18 = function(argcv) {
     var curarg = 1;
     if (argcv[0] !=  func18.paramCounts[0])
@@ -221,10 +221,10 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 43
+      lineNumber = 46
       onSelf = true;
       var call19 = callmethod(this, "initialize", [0]);
-      lineNumber = 44
+      lineNumber = 47
       var call20 = callmethod(var_sprite,"penUp", [0]);
       return call20
     } catch(e) {
@@ -242,42 +242,22 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["penUp"] = func18;
-  func18.definitionLine = 42;
+  func18.definitionLine = 45;
   func18.definitionModule = "hoc";
-  lineNumber = 48
+  lineNumber = 50
   var func21 = function(argcv) {
     var curarg = 1;
-    var var_t = arguments[curarg];
-    curarg++;
     if (argcv[0] !=  func21.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (every)"));
-    var var_m = arguments[curarg];
-    curarg++;
-    if (argcv[1] !=  func21.paramCounts[1])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 2 (do)"));
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (doClick)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 49
-      onSelf = true;
-      var call22 = callmethod(this, "initialize", [0]);
-      lineNumber = 55
-      var if23 = var_done;
-      lineNumber = 50
-      var opresult26 = callmethod(var_m, "==", [1], var_last);
-      if (Grace_isTrue(opresult26)) {
-        lineNumber = 51
-        var string27 = new GraceString("Same");
-        var call28 = Grace_print(string27);
-        if23 = call28;
-      } else {
-        lineNumber = 53
-        var string29 = new GraceString("Different");
-        var call30 = Grace_print(string29);
-        if23 = call30;
-      }
-      return if23
+      lineNumber = 52
+      lineNumber = 51
+      var bool22 = new GraceBoolean(true)
+      var_clicked = bool22;
+      return bool22
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -287,48 +267,28 @@ function gracecode_hoc () {
     }
   }
   func21.paramCounts = [
-    1,
-    1,
+    0,
   ];
   func21.variableArities = [
     false,
-    false,
   ];
-  this.methods["every()do"] = func21;
-  func21.definitionLine = 48;
+  this.methods["doClick"] = func21;
+  func21.definitionLine = 50;
   func21.definitionModule = "hoc";
-  lineNumber = 57
-  var func31 = function(argcv) {
+  lineNumber = 54
+  var func23 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func31.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialize)"));
+    var var_m = arguments[curarg];
+    curarg++;
+    if (argcv[0] !=  func23.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (whenClicked)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 61
-      var if32 = var_done;
-      lineNumber = 58
-      if (Grace_isTrue(var_initialized)) {
-        lineNumber = 60
-        lineNumber = 59
-        var bool33 = new GraceBoolean(false)
-        return bool33
-        if32 = undefined;
-      }
-      lineNumber = 62
-      lineNumber = 61
-      var call34 = callmethod(var_dom,"document", [0]);
-      var_document = call34;
-      lineNumber = 63
-      lineNumber = 62
-      var bool35 = new GraceBoolean(true)
-      var_initialized = bool35;
-      lineNumber = 63
-      var string36 = new GraceString("sprite");
-      var call37 = callmethod(var_document,"getElementById", [1], string36);
-      var_sprite = call37;
-      return call37
+      lineNumber = 55
+      var call24 = callmethod(var_clickedBlocks,"push", [1], var_m);
+      return call24
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -337,15 +297,300 @@ function gracecode_hoc () {
       }
     }
   }
-  func31.paramCounts = [
-    0,
+  func23.paramCounts = [
+    1,
   ];
-  func31.variableArities = [
+  func23.variableArities = [
     false,
   ];
-  this.methods["initialize"] = func31;
-  func31.definitionLine = 57;
-  func31.definitionModule = "hoc";
+  this.methods["whenClicked"] = func23;
+  func23.definitionLine = 54;
+  func23.definitionModule = "hoc";
+  lineNumber = 58
+  var func25 = function(argcv) {
+    var curarg = 1;
+    var var_t = arguments[curarg];
+    curarg++;
+    if (argcv[0] !=  func25.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (wait)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 60
+      lineNumber = 59
+      var prod28 = callmethod(var_t, "*", [1], new GraceNum(1000));
+      var_delay = prod28;
+      return prod28
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func25.paramCounts = [
+    1,
+  ];
+  func25.variableArities = [
+    false,
+  ];
+  this.methods["wait"] = func25;
+  func25.definitionLine = 58;
+  func25.definitionModule = "hoc";
+  lineNumber = 62
+  var func29 = function(argcv) {
+    var curarg = 1;
+    var var_m = arguments[curarg];
+    curarg++;
+    if (argcv[0] !=  func29.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (forever)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 66
+      var if30 = var_done;
+      lineNumber = 63
+      var call32 = callmethod(var_foreverBlocks,"size", [0]);
+      var opresult34 = callmethod(call32, ">", [1], new GraceNum(0));
+      if (Grace_isTrue(opresult34)) {
+        lineNumber = 64
+        var call35 = callmethod(var_foreverBlocks,"pop", [0]);
+        if30 = call35;
+      }
+      lineNumber = 66
+      var call36 = callmethod(var_foreverBlocks,"push", [1], var_m);
+      lineNumber = 68
+      lineNumber = 67
+      var_delay = new GraceNum(0);
+      return new GraceNum(0)
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func29.paramCounts = [
+    1,
+  ];
+  func29.variableArities = [
+    false,
+  ];
+  this.methods["forever"] = func29;
+  func29.definitionLine = 62;
+  func29.definitionModule = "hoc";
+  lineNumber = 70
+  var func37 = function(argcv) {
+    var curarg = 1;
+    if (argcv[0] !=  func37.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialize)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 74
+      var if38 = var_done;
+      lineNumber = 71
+      if (Grace_isTrue(var_initialized)) {
+        lineNumber = 73
+        lineNumber = 72
+        var bool39 = new GraceBoolean(false)
+        return bool39
+        if38 = undefined;
+      }
+      lineNumber = 75
+      lineNumber = 74
+      var call40 = callmethod(var_dom,"document", [0]);
+      var_document = call40;
+      lineNumber = 76
+      lineNumber = 75
+      var bool41 = new GraceBoolean(true)
+      var_initialized = bool41;
+      lineNumber = 76
+      var string42 = new GraceString("sprite");
+      var call43 = callmethod(var_document,"getElementById", [1], string42);
+      var_sprite = call43;
+      lineNumber = 79
+      lineNumber = 78
+      var var_tick = new GraceNum(5);
+      lineNumber = 79;
+      moduleName = "hoc";
+      lineNumber = 78
+      if (!Grace_isTrue(callmethod(var_Unknown, "match",
+        [1], var_tick)))
+          throw new GraceExceptionPacket(TypeErrorObject,
+                new GraceString("expected "
+                + "initial value of def 'tick' to be of type Unknown"))
+      lineNumber = 79
+      var block44 = Grace_allocObject();
+      block44.methods["apply"] = function() {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return this.real.apply(this.receiver, args);
+      }
+      block44.methods["applyIndirectly"] = function(argcv, a) {
+        return this.real.apply(this.receiver, a._value);
+      }
+      block44.methods["outer"] = function() {
+        return callmethod(this.receiver, 'outer', [0]);
+      }
+      block44.methods["match"] = GraceBlock_match;
+      block44.methods["prefix?"] = GraceBlock_lift;
+      block44.receiver = this;
+      block44.className = 'block<hoc:79>';
+      block44.real = function(
+      ) {
+        sourceObject = this;
+        return var_running;
+      };
+      lineNumber = 93
+      var block45 = Grace_allocObject();
+      block45.methods["apply"] = function() {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return this.real.apply(this.receiver, args);
+      }
+      block45.methods["applyIndirectly"] = function(argcv, a) {
+        return this.real.apply(this.receiver, a._value);
+      }
+      block45.methods["outer"] = function() {
+        return callmethod(this.receiver, 'outer', [0]);
+      }
+      block45.methods["match"] = GraceBlock_match;
+      block45.methods["prefix?"] = GraceBlock_lift;
+      block45.receiver = this;
+      block45.className = 'block<hoc:93>';
+      block45.real = function(
+      ) {
+        sourceObject = this;
+        lineNumber = 81
+        lineNumber = 80
+        var diff48 = callmethod(var_delay, "-", [1], var_tick);
+        var_delay = diff48;
+        lineNumber = 86
+        var if49 = var_done;
+        lineNumber = 81
+        var opresult52 = callmethod(var_delay, "<=", [1], new GraceNum(0));
+        if (Grace_isTrue(opresult52)) {
+          lineNumber = 82
+          lineNumber = 85
+          var block53 = Grace_allocObject();
+          block53.methods["apply"] = function() {
+            var args = Array.prototype.slice.call(arguments, 1);
+            return this.real.apply(this.receiver, args);
+          }
+          block53.methods["applyIndirectly"] = function(argcv, a) {
+            return this.real.apply(this.receiver, a._value);
+          }
+          block53.methods["outer"] = function() {
+            return callmethod(this.receiver, 'outer', [0]);
+          }
+          block53.methods["match"] = GraceBlock_match;
+          block53.methods["prefix?"] = GraceBlock_lift;
+          block53.receiver = this;
+          block53.className = 'block<hoc:85>';
+          block53.real = function(
+            var_step
+          ) {
+            sourceObject = this;
+            lineNumber = 83
+            var call54 = callmethod(var_step,"apply", [0]);
+            return call54;
+          };
+          var call55 = callmethod(Grace_prelude,"for()do", [1, 1], var_foreverBlocks, block53);
+          if49 = call55;
+        }
+        lineNumber = 91
+        var if56 = var_done;
+        lineNumber = 86
+        if (Grace_isTrue(var_clicked)) {
+          lineNumber = 87
+          lineNumber = 90
+          var block57 = Grace_allocObject();
+          block57.methods["apply"] = function() {
+            var args = Array.prototype.slice.call(arguments, 1);
+            return this.real.apply(this.receiver, args);
+          }
+          block57.methods["applyIndirectly"] = function(argcv, a) {
+            return this.real.apply(this.receiver, a._value);
+          }
+          block57.methods["outer"] = function() {
+            return callmethod(this.receiver, 'outer', [0]);
+          }
+          block57.methods["match"] = GraceBlock_match;
+          block57.methods["prefix?"] = GraceBlock_lift;
+          block57.receiver = this;
+          block57.className = 'block<hoc:90>';
+          block57.real = function(
+            var_step
+          ) {
+            sourceObject = this;
+            lineNumber = 88
+            var call58 = callmethod(var_step,"apply", [0]);
+            return call58;
+          };
+          var call59 = callmethod(Grace_prelude,"for()do", [1, 1], var_clickedBlocks, block57);
+          if56 = call59;
+        }
+        lineNumber = 92
+        lineNumber = 91
+        var bool60 = new GraceBoolean(false)
+        var_clicked = bool60;
+        return bool60;
+      };
+      lineNumber = 79
+      var call61 = callmethod(var_dom,"while()waiting()do", [1, 1, 1], block44, var_tick, block45);
+      return call61
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func37.paramCounts = [
+    0,
+  ];
+  func37.variableArities = [
+    false,
+  ];
+  this.methods["initialize"] = func37;
+  func37.definitionLine = 70;
+  func37.definitionModule = "hoc";
+  lineNumber = 95
+  var func62 = function(argcv) {
+    var curarg = 1;
+    if (argcv[0] !=  func62.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (stop)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 97
+      lineNumber = 96
+      var bool63 = new GraceBoolean(false)
+      var_running = bool63;
+      return bool63
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func62.paramCounts = [
+    0,
+  ];
+  func62.variableArities = [
+    false,
+  ];
+  this.methods["stop"] = func62;
+  func62.definitionLine = 95;
+  func62.definitionModule = "hoc";
   lineNumber = 1
   // Import of dom
   if (typeof gracecode_dom == 'undefined')
@@ -365,17 +610,17 @@ function gracecode_hoc () {
       new GraceString('could not find module StandardPrelude'));
   var var_StandardPrelude = do_import("StandardPrelude", gracecode_StandardPrelude);
   lineNumber = 4
-  var call38 = callmethod(var_StandardPrelude,"methods", [0]);
-  this.superobj = call38;
-  this.data = call38.data;
-  this._value = call38._value;
+  var call64 = callmethod(var_StandardPrelude,"methods", [0]);
+  this.superobj = call64;
+  this.data = call64.data;
+  this._value = call64._value;
   lineNumber = 6
   lineNumber = 7
   var var_document;
   lineNumber = 4
-  var func39 = function(argcv) {
+  var func65 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func39.paramCounts[0])
+    if (argcv[0] !=  func65.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (document)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -391,21 +636,21 @@ function gracecode_hoc () {
       }
     }
   }
-  func39.paramCounts = [
+  func65.paramCounts = [
     0,
   ];
-  func39.variableArities = [
+  func65.variableArities = [
     false,
   ];
-  this.methods["document"] = func39;
-  func39.definitionLine = 4;
-  func39.definitionModule = "hoc";
+  this.methods["document"] = func65;
+  func65.definitionLine = 4;
+  func65.definitionModule = "hoc";
   lineNumber = 4
-  var func40 = function(argcv) {
+  var func66 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func40.paramCounts[0])
+    if (argcv[0] !=  func66.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (document:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -421,21 +666,21 @@ function gracecode_hoc () {
       }
     }
   }
-  func40.paramCounts = [
+  func66.paramCounts = [
     1,
   ];
-  func40.variableArities = [
+  func66.variableArities = [
     false,
   ];
-  this.methods["document:="] = func40;
-  func40.definitionLine = 4;
-  func40.definitionModule = "hoc";
+  this.methods["document:="] = func66;
+  func66.definitionLine = 4;
+  func66.definitionModule = "hoc";
   lineNumber = 8
   var var_sprite;
   lineNumber = 4
-  var func41 = function(argcv) {
+  var func67 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func41.paramCounts[0])
+    if (argcv[0] !=  func67.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (sprite)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -451,21 +696,21 @@ function gracecode_hoc () {
       }
     }
   }
-  func41.paramCounts = [
+  func67.paramCounts = [
     0,
   ];
-  func41.variableArities = [
+  func67.variableArities = [
     false,
   ];
-  this.methods["sprite"] = func41;
-  func41.definitionLine = 4;
-  func41.definitionModule = "hoc";
+  this.methods["sprite"] = func67;
+  func67.definitionLine = 4;
+  func67.definitionModule = "hoc";
   lineNumber = 4
-  var func42 = function(argcv) {
+  var func68 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func42.paramCounts[0])
+    if (argcv[0] !=  func68.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (sprite:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -481,23 +726,23 @@ function gracecode_hoc () {
       }
     }
   }
-  func42.paramCounts = [
+  func68.paramCounts = [
     1,
   ];
-  func42.variableArities = [
+  func68.variableArities = [
     false,
   ];
-  this.methods["sprite:="] = func42;
-  func42.definitionLine = 4;
-  func42.definitionModule = "hoc";
+  this.methods["sprite:="] = func68;
+  func68.definitionLine = 4;
+  func68.definitionModule = "hoc";
   lineNumber = 9
   lineNumber = 8
-  var bool43 = new GraceBoolean(false)
-  var var_initialized = bool43;
+  var bool69 = new GraceBoolean(false)
+  var var_initialized = bool69;
   lineNumber = 4
-  var func44 = function(argcv) {
+  var func70 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func44.paramCounts[0])
+    if (argcv[0] !=  func70.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialized)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -513,21 +758,21 @@ function gracecode_hoc () {
       }
     }
   }
-  func44.paramCounts = [
+  func70.paramCounts = [
     0,
   ];
-  func44.variableArities = [
+  func70.variableArities = [
     false,
   ];
-  this.methods["initialized"] = func44;
-  func44.definitionLine = 4;
-  func44.definitionModule = "hoc";
+  this.methods["initialized"] = func70;
+  func70.definitionLine = 4;
+  func70.definitionModule = "hoc";
   lineNumber = 4
-  var func45 = function(argcv) {
+  var func71 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func45.paramCounts[0])
+    if (argcv[0] !=  func71.paramCounts[0])
       callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (initialized:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
@@ -543,15 +788,15 @@ function gracecode_hoc () {
       }
     }
   }
-  func45.paramCounts = [
+  func71.paramCounts = [
     1,
   ];
-  func45.variableArities = [
+  func71.variableArities = [
     false,
   ];
-  this.methods["initialized:="] = func45;
-  func45.definitionLine = 4;
-  func45.definitionModule = "hoc";
+  this.methods["initialized:="] = func71;
+  func71.definitionLine = 4;
+  func71.definitionModule = "hoc";
   lineNumber = 9;
   moduleName = "hoc";
   lineNumber = 8
@@ -562,18 +807,18 @@ function gracecode_hoc () {
             + "initial value of var 'initialized' to be of type Unknown"))
   lineNumber = 10
   lineNumber = 9
-  var call46 = callmethod(var_collections,"map", [0]);
-  var call47 = callmethod(call46,"new", [0]);
-  var var_whiles = call47;
-  var func48 = function(argcv) {
+  var call72 = callmethod(var_collections,"list", [0]);
+  var call73 = callmethod(call72,"new", [0]);
+  var var_foreverBlocks = call73;
+  var func74 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func48.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (whiles)"));
+    if (argcv[0] !=  func74.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (foreverBlocks)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      return var_whiles
+      return var_foreverBlocks
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -582,26 +827,26 @@ function gracecode_hoc () {
       }
     }
   }
-  func48.paramCounts = [
+  func74.paramCounts = [
     0,
   ];
-  func48.variableArities = [
+  func74.variableArities = [
     false,
   ];
-  this.methods["whiles"] = func48;
-  func48.definitionLine = 9;
-  func48.definitionModule = "hoc";
-  var func49 = function(argcv) {
+  this.methods["foreverBlocks"] = func74;
+  func74.definitionLine = 9;
+  func74.definitionModule = "hoc";
+  var func75 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func49.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (whiles:=)"));
+    if (argcv[0] !=  func75.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (foreverBlocks:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      var_whiles = var___95__var__95__assign__95__tmp;
+      var_foreverBlocks = var___95__var__95__assign__95__tmp;
       return var___95__var__95__assign__95__tmp
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
@@ -611,37 +856,37 @@ function gracecode_hoc () {
       }
     }
   }
-  func49.paramCounts = [
+  func75.paramCounts = [
     1,
   ];
-  func49.variableArities = [
+  func75.variableArities = [
     false,
   ];
-  this.methods["whiles:="] = func49;
-  func49.definitionLine = 9;
-  func49.definitionModule = "hoc";
+  this.methods["foreverBlocks:="] = func75;
+  func75.definitionLine = 9;
+  func75.definitionModule = "hoc";
   lineNumber = 10;
   moduleName = "hoc";
   lineNumber = 9
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
-    [1], var_whiles)))
+    [1], var_foreverBlocks)))
       throw new GraceExceptionPacket(TypeErrorObject,
             new GraceString("expected "
-            + "initial value of var 'whiles' to be of type Unknown"))
-  lineNumber = 12
+            + "initial value of var 'foreverBlocks' to be of type Unknown"))
+  lineNumber = 11
   lineNumber = 10
-  var call50 = callmethod(var_collections,"map", [0]);
-  var call51 = callmethod(call50,"new", [0]);
-  var var_counts = call51;
-  var func52 = function(argcv) {
+  var call76 = callmethod(var_collections,"list", [0]);
+  var call77 = callmethod(call76,"new", [0]);
+  var var_clickedBlocks = call77;
+  var func78 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func52.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (counts)"));
+    if (argcv[0] !=  func78.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (clickedBlocks)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      return var_counts
+      return var_clickedBlocks
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -650,26 +895,26 @@ function gracecode_hoc () {
       }
     }
   }
-  func52.paramCounts = [
+  func78.paramCounts = [
     0,
   ];
-  func52.variableArities = [
+  func78.variableArities = [
     false,
   ];
-  this.methods["counts"] = func52;
-  func52.definitionLine = 10;
-  func52.definitionModule = "hoc";
-  var func53 = function(argcv) {
+  this.methods["clickedBlocks"] = func78;
+  func78.definitionLine = 10;
+  func78.definitionModule = "hoc";
+  var func79 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func53.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (counts:=)"));
+    if (argcv[0] !=  func79.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (clickedBlocks:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      var_counts = var___95__var__95__assign__95__tmp;
+      var_clickedBlocks = var___95__var__95__assign__95__tmp;
       return var___95__var__95__assign__95__tmp
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
@@ -679,43 +924,37 @@ function gracecode_hoc () {
       }
     }
   }
-  func53.paramCounts = [
+  func79.paramCounts = [
     1,
   ];
-  func53.variableArities = [
+  func79.variableArities = [
     false,
   ];
-  this.methods["counts:="] = func53;
-  func53.definitionLine = 10;
-  func53.definitionModule = "hoc";
-  lineNumber = 12;
+  this.methods["clickedBlocks:="] = func79;
+  func79.definitionLine = 10;
+  func79.definitionModule = "hoc";
+  lineNumber = 11;
   moduleName = "hoc";
   lineNumber = 10
   if (!Grace_isTrue(callmethod(var_Unknown, "match",
-    [1], var_counts)))
+    [1], var_clickedBlocks)))
       throw new GraceExceptionPacket(TypeErrorObject,
             new GraceString("expected "
-            + "initial value of var 'counts' to be of type Unknown"))
+            + "initial value of var 'clickedBlocks' to be of type Unknown"))
   lineNumber = 12
-  lineNumber = 17
-  lineNumber = 22
-  lineNumber = 27
-  lineNumber = 32
-  lineNumber = 37
-  lineNumber = 42
-  lineNumber = 47
-  var var_last;
+  lineNumber = 11
+  var var_delay = new GraceNum(0);
   lineNumber = 10
-  var func54 = function(argcv) {
+  var func80 = function(argcv) {
     var curarg = 1;
-    if (argcv[0] !=  func54.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (last)"));
+    if (argcv[0] !=  func80.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (delay)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 47
-      return var_last
+      lineNumber = 11
+      return var_delay
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -724,27 +963,27 @@ function gracecode_hoc () {
       }
     }
   }
-  func54.paramCounts = [
+  func80.paramCounts = [
     0,
   ];
-  func54.variableArities = [
+  func80.variableArities = [
     false,
   ];
-  this.methods["last"] = func54;
-  func54.definitionLine = 10;
-  func54.definitionModule = "hoc";
+  this.methods["delay"] = func80;
+  func80.definitionLine = 10;
+  func80.definitionModule = "hoc";
   lineNumber = 10
-  var func55 = function(argcv) {
+  var func81 = function(argcv) {
     var curarg = 1;
     var var___95__var__95__assign__95__tmp = arguments[curarg];
     curarg++;
-    if (argcv[0] !=  func55.paramCounts[0])
-      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (last:=)"));
+    if (argcv[0] !=  func81.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (delay:=)"));
     var returnTarget = invocationCount;
     invocationCount++;
     moduleName = "hoc";
     try {
-      var_last = var___95__var__95__assign__95__tmp;
+      var_delay = var___95__var__95__assign__95__tmp;
       return var___95__var__95__assign__95__tmp
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
@@ -754,20 +993,179 @@ function gracecode_hoc () {
       }
     }
   }
-  func55.paramCounts = [
+  func81.paramCounts = [
     1,
   ];
-  func55.variableArities = [
+  func81.variableArities = [
     false,
   ];
-  this.methods["last:="] = func55;
-  func55.definitionLine = 10;
-  func55.definitionModule = "hoc";
-  lineNumber = 48
-  lineNumber = 57
-  lineNumber = 77
+  this.methods["delay:="] = func81;
+  func81.definitionLine = 10;
+  func81.definitionModule = "hoc";
+  lineNumber = 12;
+  moduleName = "hoc";
+  lineNumber = 11
+  if (!Grace_isTrue(callmethod(var_Unknown, "match",
+    [1], var_delay)))
+      throw new GraceExceptionPacket(TypeErrorObject,
+            new GraceString("expected "
+            + "initial value of var 'delay' to be of type Unknown"))
+  lineNumber = 13
+  lineNumber = 12
+  var bool82 = new GraceBoolean(true)
+  var var_running = bool82;
+  lineNumber = 10
+  var func83 = function(argcv) {
+    var curarg = 1;
+    if (argcv[0] !=  func83.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (running)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 12
+      return var_running
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func83.paramCounts = [
+    0,
+  ];
+  func83.variableArities = [
+    false,
+  ];
+  this.methods["running"] = func83;
+  func83.definitionLine = 10;
+  func83.definitionModule = "hoc";
+  lineNumber = 10
+  var func84 = function(argcv) {
+    var curarg = 1;
+    var var___95__var__95__assign__95__tmp = arguments[curarg];
+    curarg++;
+    if (argcv[0] !=  func84.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (running:=)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      var_running = var___95__var__95__assign__95__tmp;
+      return var___95__var__95__assign__95__tmp
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func84.paramCounts = [
+    1,
+  ];
+  func84.variableArities = [
+    false,
+  ];
+  this.methods["running:="] = func84;
+  func84.definitionLine = 10;
+  func84.definitionModule = "hoc";
+  lineNumber = 13;
+  moduleName = "hoc";
+  lineNumber = 12
+  if (!Grace_isTrue(callmethod(var_Unknown, "match",
+    [1], var_running)))
+      throw new GraceExceptionPacket(TypeErrorObject,
+            new GraceString("expected "
+            + "initial value of var 'running' to be of type Unknown"))
+  lineNumber = 15
+  lineNumber = 13
+  var bool85 = new GraceBoolean(false)
+  var var_clicked = bool85;
+  lineNumber = 10
+  var func86 = function(argcv) {
+    var curarg = 1;
+    if (argcv[0] !=  func86.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (clicked)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      lineNumber = 13
+      return var_clicked
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func86.paramCounts = [
+    0,
+  ];
+  func86.variableArities = [
+    false,
+  ];
+  this.methods["clicked"] = func86;
+  func86.definitionLine = 10;
+  func86.definitionModule = "hoc";
+  lineNumber = 10
+  var func87 = function(argcv) {
+    var curarg = 1;
+    var var___95__var__95__assign__95__tmp = arguments[curarg];
+    curarg++;
+    if (argcv[0] !=  func87.paramCounts[0])
+      callmethod(RuntimeErrorObject, "raise", [1], new GraceString("wrong number of arguments for part 1 (clicked:=)"));
+    var returnTarget = invocationCount;
+    invocationCount++;
+    moduleName = "hoc";
+    try {
+      var_clicked = var___95__var__95__assign__95__tmp;
+      return var___95__var__95__assign__95__tmp
+    } catch(e) {
+      if ((e.exctype == 'return') && (e.target == returnTarget)) {
+        return e.returnvalue;
+      } else {
+        throw e;
+      }
+    }
+  }
+  func87.paramCounts = [
+    1,
+  ];
+  func87.variableArities = [
+    false,
+  ];
+  this.methods["clicked:="] = func87;
+  func87.definitionLine = 10;
+  func87.definitionModule = "hoc";
+  lineNumber = 15;
+  moduleName = "hoc";
+  lineNumber = 13
+  if (!Grace_isTrue(callmethod(var_Unknown, "match",
+    [1], var_clicked)))
+      throw new GraceExceptionPacket(TypeErrorObject,
+            new GraceString("expected "
+            + "initial value of var 'clicked' to be of type Unknown"))
+  lineNumber = 15
+  lineNumber = 20
+  lineNumber = 25
+  lineNumber = 30
+  lineNumber = 35
+  lineNumber = 40
+  lineNumber = 45
+  lineNumber = 50
+  lineNumber = 54
+  lineNumber = 58
+  lineNumber = 62
+  lineNumber = 70
+  lineNumber = 95
+  lineNumber = 99
   onSelf = true;
-  var call56 = callmethod(this, "initialize", [0]);
+  var call88 = callmethod(this, "initialize", [0]);
   return this;
 }
 gracecode_hoc.imports = [
@@ -776,7 +1174,7 @@ gracecode_hoc.imports = [
 'StandardPrelude',
 ];
 if (gctCache)
-  gctCache['hoc'] = "public:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n whiles\n whiles:=\n counts\n counts:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n last\n last:=\n every()do\n initialize\nconfidential:\nmodules:\n StandardPrelude\n mgcollections\nfresh-methods:\npath:\n hoc\nclasses:\n";
+  gctCache['hoc'] = "path:\n hoc\nclasses:\npublic:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n foreverBlocks\n foreverBlocks:=\n clickedBlocks\n clickedBlocks:=\n delay\n delay:=\n running\n running:=\n clicked\n clicked:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n doClick\n whenClicked\n wait\n forever\n initialize\n stop\nconfidential:\nfresh-methods:\nmodules:\n";
 if (originalSourceLines) {
   originalSourceLines["hoc"] = [
     "import \"dom\" as dom",
@@ -787,8 +1185,11 @@ if (originalSourceLines) {
     "var document",
     "var sprite",
     "var initialized := false",
-    "var whiles := collections.map.new",
-    "var counts := collections.map.new",
+    "var foreverBlocks := collections.list.new",
+    "var clickedBlocks := collections.list.new",
+    "var delay := 0",
+    "var running := true",
+    "var clicked := false",
     "",
     "method goToX(x)Y(y) {",
     "    initialize",
@@ -825,14 +1226,24 @@ if (originalSourceLines) {
     "    sprite.penUp",
     "}",
     "",
-    "var last;",
-    "method every(t)do(m) {",
-    "    initialize",
-    "    if (m == last) then {",
-    "        print \"Same\"",
-    "    } else {",
-    "        print \"Different\"",
+    "method doClick {",
+    "    clicked := true",
+    "}",
+    "",
+    "method whenClicked(m) {",
+    "    clickedBlocks.push(m)",
+    "}",
+    "",
+    "method wait(t) {",
+    "    delay := t * 1000",
+    "}",
+    "",
+    "method forever(m) {",
+    "    if (foreverBlocks.size > 0) then {",
+    "        foreverBlocks.pop",
     "    }",
+    "    foreverBlocks.push(m)",
+    "    delay := 0",
     "}",
     "",
     "method initialize {",
@@ -843,16 +1254,25 @@ if (originalSourceLines) {
     "    initialized := true",
     "    sprite := document.getElementById(\"sprite\")",
     "    ",
-    "    //def wait = 10",
-    "    //dom.while {true} waiting (wait) do {",
-    "    //    for (counts) do { kvp ->",
-    "    //        kvp.value -= wait",
-    "    //        if (kvp.value < 0) then {",
-    "    //            kvp.key.apply",
-    "    //            kvp.value += whiles.get(kvp.key)",
-    "    //        }",
-    "    //    }",
-    "    //}",
+    "    def tick = 5",
+    "    dom.while {running} waiting (tick) do {",
+    "        delay := delay - tick",
+    "        if (delay <= 0) then {",
+    "            for (foreverBlocks) do { step ->",
+    "                step.apply",
+    "            }",
+    "        }",
+    "        if (clicked) then {",
+    "            for (clickedBlocks) do { step ->",
+    "                step.apply",
+    "            }",
+    "        }",
+    "        clicked := false",
+    "    }",
+    "}",
+    "",
+    "method stop {",
+    "    running := false",
     "}",
     "",
     "initialize",

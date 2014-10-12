@@ -173,9 +173,8 @@ function Sprite(path) {
 		if (x >= this.x && x < this.x + this.width &&
 				y >= this.y && y < this.y + this.height) {
 			try {
-				//if(this.userCode != null && this.userCode.whenClicked != null) this.userCode.whenClicked();
-				if (runningCode && runningCode.methods.whenClicked) {
-					runningCode.methods.whenClicked([0]);
+				if (runningCode && runningCode.outer.methods.doClick) {
+					runningCode.outer.methods.doClick([0]);
 				}
 			} catch (e) {
 				console.log(e.message);
