@@ -6,13 +6,15 @@ inherits StandardPrelude.methods
 var document
 var sprite
 var initialized := false
+var whiles := collections.map.new
+var counts := collections.map.new
 
 method goToX(x)Y(y) {
     initialize
     sprite.goTo(x, y)
 }
 
-method pickRandomBetween(min)And(max) {
+method pickRandom(min)To(max) {
     initialize
     return sprite.pickRandom(min, max)
 }
@@ -42,14 +44,15 @@ method penUp {
     sprite.penUp
 }
 
-method doOnClick {
+method every(t)do(m) {
     initialize
-    print "doOnClicked"
-    whenClicked
-}
-
-method whenClicked {
-    print "whenClicked"
+    if (whiles.contains(m)) then {
+        whiles.remove(m)
+        counts.remove(m)
+    }
+    whiles.put(m, t)
+    counts.put(m, t)
+    m.apply
 }
 
 method initialize {
@@ -59,4 +62,17 @@ method initialize {
     document := dom.document
     initialized := true
     sprite := document.getElementById("sprite")
+    
+    def wait = 10
+    dom.while {true} waiting (wait) do {
+        for (counts) do { kvp ->
+            kvp.value -= wait
+            if (kvp.value < 0) then {
+                kvp.key.apply
+                kvp.value += whiles.get(kvp.key)
+            }
+        }
+    }
 }
+
+initialize
