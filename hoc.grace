@@ -52,6 +52,7 @@ method every(t)do(m) {
     } else {
         print "Different"
     }
+    last := m;
 }
 
 method initialize {

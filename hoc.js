@@ -277,7 +277,9 @@ function gracecode_hoc () {
         var call30 = Grace_print(string29);
         if23 = call30;
       }
-      return if23
+      lineNumber = 55
+      var_last = var_m;
+      return var_m
     } catch(e) {
       if ((e.exctype == 'return') && (e.target == returnTarget)) {
         return e.returnvalue;
@@ -297,7 +299,7 @@ function gracecode_hoc () {
   this.methods["every()do"] = func21;
   func21.definitionLine = 48;
   func21.definitionModule = "hoc";
-  lineNumber = 57
+  lineNumber = 58
   var func31 = function(argcv) {
     var curarg = 1;
     if (argcv[0] !=  func31.paramCounts[0])
@@ -306,25 +308,25 @@ function gracecode_hoc () {
     invocationCount++;
     moduleName = "hoc";
     try {
-      lineNumber = 61
+      lineNumber = 62
       var if32 = var_done;
-      lineNumber = 58
+      lineNumber = 59
       if (Grace_isTrue(var_initialized)) {
+        lineNumber = 61
         lineNumber = 60
-        lineNumber = 59
         var bool33 = new GraceBoolean(false)
         return bool33
         if32 = undefined;
       }
+      lineNumber = 63
       lineNumber = 62
-      lineNumber = 61
       var call34 = callmethod(var_dom,"document", [0]);
       var_document = call34;
+      lineNumber = 64
       lineNumber = 63
-      lineNumber = 62
       var bool35 = new GraceBoolean(true)
       var_initialized = bool35;
-      lineNumber = 63
+      lineNumber = 64
       var string36 = new GraceString("sprite");
       var call37 = callmethod(var_document,"getElementById", [1], string36);
       var_sprite = call37;
@@ -344,7 +346,7 @@ function gracecode_hoc () {
     false,
   ];
   this.methods["initialize"] = func31;
-  func31.definitionLine = 57;
+  func31.definitionLine = 58;
   func31.definitionModule = "hoc";
   lineNumber = 1
   // Import of dom
@@ -764,8 +766,8 @@ function gracecode_hoc () {
   func55.definitionLine = 10;
   func55.definitionModule = "hoc";
   lineNumber = 48
-  lineNumber = 57
-  lineNumber = 77
+  lineNumber = 58
+  lineNumber = 78
   onSelf = true;
   var call56 = callmethod(this, "initialize", [0]);
   return this;
@@ -776,7 +778,7 @@ gracecode_hoc.imports = [
 'StandardPrelude',
 ];
 if (gctCache)
-  gctCache['hoc'] = "public:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n whiles\n whiles:=\n counts\n counts:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n last\n last:=\n every()do\n initialize\nconfidential:\nmodules:\n StandardPrelude\n mgcollections\nfresh-methods:\npath:\n hoc\nclasses:\n";
+  gctCache['hoc'] = "confidential:\nmodules:\n StandardPrelude\n mgcollections\nfresh-methods:\npath:\n hoc\nclasses:\npublic:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n whiles\n whiles:=\n counts\n counts:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n last\n last:=\n every()do\n initialize\n";
 if (originalSourceLines) {
   originalSourceLines["hoc"] = [
     "import \"dom\" as dom",
@@ -833,6 +835,7 @@ if (originalSourceLines) {
     "    } else {",
     "        print \"Different\"",
     "    }",
+    "    last := m;",
     "}",
     "",
     "method initialize {",
