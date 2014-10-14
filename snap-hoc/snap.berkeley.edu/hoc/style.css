@@ -92,14 +92,19 @@ body {
   overflow: hidden;
   top: 5em;
   bottom: 0;
+  width: 100%;
 }
 
-#left {
+#holder {
   position: relative;
   height: 100%;
   width: 25%;
   float: left;
+}
+
+#left {
   overflow-y: auto;
+  height: calc(100% - 200px);
 }
 
 #right {
