@@ -1162,10 +1162,6 @@ function gracecode_hoc () {
   lineNumber = 58
   lineNumber = 62
   lineNumber = 70
-  lineNumber = 95
-  lineNumber = 99
-  onSelf = true;
-  var call88 = callmethod(this, "initialize", [0]);
   return this;
 }
 gracecode_hoc.imports = [
@@ -1174,7 +1170,7 @@ gracecode_hoc.imports = [
 'StandardPrelude',
 ];
 if (gctCache)
-  gctCache['hoc'] = "path:\n hoc\nclasses:\npublic:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n foreverBlocks\n foreverBlocks:=\n clickedBlocks\n clickedBlocks:=\n delay\n delay:=\n running\n running:=\n clicked\n clicked:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n doClick\n whenClicked\n wait\n forever\n initialize\n stop\nconfidential:\nfresh-methods:\nmodules:\n";
+  gctCache['hoc'] = "confidential:\nmodules:\n StandardPrelude\n mgcollections\nfresh-methods:\npath:\n hoc\nclasses:\npublic:\n document\n document:=\n sprite\n sprite:=\n initialized\n initialized:=\n foreverBlocks\n foreverBlocks:=\n clickedBlocks\n clickedBlocks:=\n delay\n delay:=\n running\n running:=\n clicked\n clicked:=\n goToX()Y\n pickRandom()To\n turnAround\n say\n clear\n penDown\n penUp\n doClick\n whenClicked\n wait\n forever\n initialize\n stop\n";
 if (originalSourceLines) {
   originalSourceLines["hoc"] = [
     "import \"dom\" as dom",
@@ -1274,7 +1270,5 @@ if (originalSourceLines) {
     "method stop {",
     "    running := false",
     "}",
-    "",
-    "initialize",
   ];
 }

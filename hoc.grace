@@ -95,5 +95,3 @@ method initialize {
 method stop {
     running := false
 }
-
-initialize

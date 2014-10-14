@@ -105,7 +105,9 @@
 		var reset = function() {
 			alonzo.stop();
 			try {
-				runningCode.outer.methods.stop([0]);
+				if (window.runningCode && window.runningCode.outer.methods.stop) {
+					runningCode.outer.methods.stop([0]);
+				}
 			} catch (E) { }
 		};
 	 </script>
