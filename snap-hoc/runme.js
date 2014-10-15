@@ -147,6 +147,18 @@ function load_left (idx, callback) {
   }
 }
 
+var tileList = [
+	["whenClicked", "turnAround"],
+	["number", "goToX()Y", "pickRandom()To"],
+	["say", "string"],
+	["forever", "wait"],
+	["var", "vardec", "assign"],
+	["operator"],
+	["comparison-operator", "if()then"],
+	[],
+	["penDown", "penUp", "clear"],
+];
+
 function btn_click () {
   var index = parseInt($(this).data('index'));
   var name = btn_to_name[index];
@@ -168,6 +180,14 @@ function btn_click () {
       //get_proj_xml ( name + ".xml", partial_load_xml);
     }
   }
+  
+  var funcs = [];
+  for (var i = 0; i <= index && i < tileList.length; i++) {
+	funcs = funcs.concat(tileList[i]);
+  }
+  var frame = document.getElementById("snap");
+  frame.contentWindow.setPane(funcs);
+  
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson + 1 === btn_to_name.length) {

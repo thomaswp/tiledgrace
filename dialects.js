@@ -837,6 +837,7 @@ function createDialectRequestTile(req) {
     tile.classList.add("tile");
     tile.classList.add("dialect-method");
     tile.dataset.category = req.category;
+	tile.dataset.tileName = req.name;
     if (req.constant)
         tile.classList.add('constant');
     var line = tile;

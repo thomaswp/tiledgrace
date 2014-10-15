@@ -1,7 +1,7 @@
 "use strict"
 var shrinkFuncs = [];
 var growFuncs = [];
-function shrink() {
+function shrink(snap) {
     if (highlightTileErrors())
         return;
     var viewButton = document.getElementById('viewbutton');
@@ -48,9 +48,10 @@ function shrink() {
             codearea.style.visibility = 'hidden';
             document.getElementById('indicator').style.background = 'green';
             viewButton.disabled = "";
-        }, 1100);
-    }, 700);
+        }, snap ? 0 : 1100);
+    }, snap ? 0 : 700);
 }
+
 function grow() {
     if (editor.getValue() != document.getElementById('gracecode').value) {
         document.getElementById('stderr_txt').value = "";

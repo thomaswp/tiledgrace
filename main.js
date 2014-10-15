@@ -137,6 +137,21 @@ function switchPane(category) {
         else if (tb.childNodes[i].style)
             tb.childNodes[i].style.display = "";
 }
+
+function setPane(list) {
+    var tb = document.getElementById("toolbox");
+    for (var i=0; i<tb.childNodes.length; i++) {
+		var node = tb.childNodes[i];
+		if (!node.style) continue;
+		var visible = false;
+		for (var j=0; j < list.length; j++) {		
+			visible |= node.dataset && node.dataset.tileName == list[j];
+			visible |= node.classList && node.classList.contains(list[j]);
+		}
+        node.style.display = visible ? "" : "none";	
+	}
+}
+
 function attachTileBehaviour(n) {
     n.addEventListener('mousedown', dragstart);
     n.addEventListener('contextmenu', function(ev) {

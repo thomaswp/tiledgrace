@@ -149,7 +149,7 @@ window.addEventListener('resize', function(ev) {
     can.height = codearea.offsetHeight;
 });
 toolbox.addEventListener('mouseover', function(ev) {
-    document.getElementById('category-bar').style.display = 'block';
+    //document.getElementById('category-bar').style.display = 'block';
     if (hideCategoryBar) {
         clearTimeout(hideCategoryBar);
         hideCategoryBar = false;
@@ -162,7 +162,7 @@ toolbox.addEventListener('mouseout', function(ev) {
 });
 document.getElementById('category-bar').addEventListener('mouseover',
         function(ev) {
-            document.getElementById('category-bar').style.display = 'block';
+            //document.getElementById('category-bar').style.display = 'block';
             if (hideCategoryBar) {
                 clearTimeout(hideCategoryBar);
                 hideCategoryBar = false;

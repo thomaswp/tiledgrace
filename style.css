@@ -13,7 +13,7 @@ html, body {
     display: -ms-flexbox;
 }
 #code_txt_real {
-    width: calc(100% - 260px);
+    width: calc(100% - 490px);
     height: 90vh; /* Work around Chrome bug 168840*/
     height: calc(99vh - 40px);
 }
@@ -35,13 +35,14 @@ html, body {
     opacity: 0.7;
 }
 #codearea {
-    width: calc(100% - 460px);
+    width: calc(100% - 690px);
     height: 90vh; /* Work around Chrome bug 168840*/
-    height: calc(99vh - 40px);
+    height: calc(99vh - 35px);
     background: #ddd;
     position: relative;
     float: left;
-    overflow: auto;
+    overflow-y: auto;
+	overflow-x: hidden;
     order: 1;
     -webkit-order: 1;
     -ms-flex-order: 1;
@@ -51,7 +52,7 @@ html, body {
     background: #ccf;
     float:left;
     height: 90vh; /* Work around Chrome bug 168840*/
-    height: calc(99vh - 40px);
+    height: calc(99vh - 35px);
     width: 200px;
     overflow: auto;
     order: 2;
@@ -62,7 +63,7 @@ html, body {
 #overlay-canvas {
     position: absolute;
     height: 90vh; /* Work around Chrome bug 168840*/
-    height: calc(99vh - 40px);
+    height: calc(99vh - 35px);
     top: 0px;
     left: 0px;
     right: 200px;
@@ -71,23 +72,21 @@ html, body {
     pointer-events: none;
 }
 #outputarea {
-    width: 260px;
+    width: 490x;
     order: 3;
     -webkit-order: 3;
     -ms-flex-order: 3;
 }
 #outputarea textarea {
-    margin-top: 260px;
-    height: 240px;
-    width: 240px;
+    margin-top: 370px;
+    height: calc(100% - 375px);
+    width: 480px;
 }
 #standard-canvas {
     z-index: 400;
     border: 1px solid black;
     position: absolute;
-    width: 250px;
-    height: 250px;
-    left: calc(100% - 260px);
+    left: calc(100% - 490px);
     top: 2px;
     transition: width 0.5s, height 0.5s, left 0.5s, top 0.5s;
 }

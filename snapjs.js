@@ -6,9 +6,10 @@ SnapJS.start = function(canvas) {
 	SnapJS.canvas = canvas;
 	SnapJS.sprites = [];
 	
-	var baseWidth = 250;
-	$(canvas).attr("width", baseWidth);
-	$(canvas).attr("height", baseWidth / SnapJS.aspect);
+	//var baseWidth = 250;
+	//$(canvas).attr("width", baseWidth);
+	//$(canvas).attr("height", baseWidth / SnapJS.aspect);
+	SnapJS.aspect = $(canvas).attr("width") / $(canvas).attr("height")
 	
 	$(canvas).click(function(e) {
 		var x = e.pageX - $(canvas).position().left - SnapJS.canvas.clientWidth / 2;
