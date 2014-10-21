@@ -16,16 +16,16 @@
          <div id="desaturator"></div>
      </div>
      <div id="toolbox">
-         <div class="tile vardec" data-category="Variables"><span style="margin-right: 1ex; color: blue;">var</span><input type="text" value="" size="1" class="variable-name"><span class="assop">:=</span><div class="hole"></div></div>
-         <div class="tile defdec" data-category="Variables"><span style="margin-right: 1ex; color: blue;">def</span><input type="text" value="" size="1" class="variable-name"><span class="assop">=</span><div class="hole"></div></div>
-         <div class="tile var" data-category="Variables"><span class="var-name">Variable</span></div>
-         <div class="tile assign" data-category="Variables"><div class="hole bind-lhs"></div><span class="assop">:=</span><div class="hole"></div></div>
-         <div class="tile operator" data-category="Numbers and Strings" data-types="Number" data-operators="+ * - /"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="+ * - /">+</div><div class="hole number" data-accepts="Number"></div></div>
-         <div class="tile operator" data-category="Numbers and Strings" data-types="String" data-operators="++"><div class="hole" data-accepts="String"></div><div class="op">++</div><div class="hole" data-accepts="String"></div></div>
-         <div class="tile comparison-operator" data-category="Numbers and Strings" data-types="Boolean" data-operators="== < >"><div class="hole number"></div><div class="cmpop">==</div><div class="hole number"></div></div>
-         <div class="tile number" data-category="Numbers and Strings" data-types="Number"><input type="text" value="0" size="3" ></div>
+         <div class="tile vardec" data-tile-name="vardec" data-category="Variables"><span style="margin-right: 1ex; color: blue;">var</span><input type="text" value="" size="1" class="variable-name"><span class="assop">:=</span><div class="hole"></div></div>
+         <div class="tile defdec" data-tile-name="defdec" data-category="Variables"><span style="margin-right: 1ex; color: blue;">def</span><input type="text" value="" size="1" class="variable-name"><span class="assop">=</span><div class="hole"></div></div>
+         <div class="tile var" data-tile-name="var" data-category="Variables"><span class="var-name">Variable</span></div>
+         <div class="tile assign" data-tile-name="assign" data-category="Variables"><div class="hole bind-lhs"></div><span class="assop">:=</span><div class="hole"></div></div>
+         <div class="tile operator" data-tile-name="numeric-operators" data-category="Numbers and Strings" data-types="Number" data-operators="+ * - /"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="+ * - /">+</div><div class="hole number" data-accepts="Number"></div></div>
+         <div class="tile operator" data-tile-name="increment" data-category="Numbers and Strings" data-types="String" data-operators="++"><div class="hole" data-accepts="String"></div><div class="op">++</div><div class="hole" data-accepts="String"></div></div>
+         <div class="tile comparison-operator" data-tile-name="comparison-operators" data-category="Numbers and Strings" data-types="Boolean" data-operators="== < >"><div class="hole number"></div><div class="cmpop">==</div><div class="hole number"></div></div>
+         <div class="tile number" data-tile-name="number" data-category="Numbers and Strings" data-types="Number"><input type="text" value="0" size="3" ></div>
          <div class="tile operator iterable" data-category="Numbers and Strings" data-types="Iterable" data-operators=".."><div class="hole number"></div><div class="op">..</div><div class="hole number"></div></div>
-         <div class="tile string" data-types="String Iterable" data-category="Numbers and Strings">"<input type="text" value="Hello, world!" size="13" >"</div>
+         <div class="tile string" data-tile-name="string" data-types="String Iterable" data-category="Numbers and Strings">"<input type="text" value="Hello, world!" size="13" >"</div>
          <div class="tile request" data-category="Control"><div class="hole"></div><span>.</span><input type="text" size="5"><a class="argument-adder">+</a></div>
          <div class="tile object" data-category="Control"><div><span style="margin-right: 1ex; color: blue;">object</span> {</div><div class="indent"><div class="hole multi object-scope"></div></div><div>}</div></div>
          <div class="tile class" data-category="Control"><div><span style="margin-right: 1ex; color: blue;">class</span><input type="text" value="" size="5" class="variable-name class-name" />.<input type="text" value="" size="5" class="method-name" /><a class="parameter-adder">+</a><span class="lbrace">{</span></div><div class="indent"><div class="hole multi object-scope"></div></div><div>}</div></div>

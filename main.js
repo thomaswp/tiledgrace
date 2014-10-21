@@ -129,6 +129,8 @@ function popupVarMenu(ev) {
     }
 }
 function switchPane(category) {
+	setPane();
+	return;
     var tb = document.getElementById("toolbox");
     for (var i=0; i<tb.childNodes.length; i++)
         if (tb.childNodes[i].dataset && tb.childNodes[i].dataset.category
@@ -138,7 +140,13 @@ function switchPane(category) {
             tb.childNodes[i].style.display = "";
 }
 
+var lastList = []; //stupid hack to get around all the switchPane calls
 function setPane(list) {
+	if (list) {
+		lastList = list;
+	} else {
+		list = lastList;
+	}
     var tb = document.getElementById("toolbox");
     for (var i=0; i<tb.childNodes.length; i++) {
 		var node = tb.childNodes[i];
@@ -146,7 +154,7 @@ function setPane(list) {
 		var visible = false;
 		for (var j=0; j < list.length; j++) {		
 			visible |= node.dataset && node.dataset.tileName == list[j];
-			visible |= node.classList && node.classList.contains(list[j]);
+			//visible |= node.classList && node.classList.contains(list[j]);
 		}
         node.style.display = visible ? "" : "none";	
 	}

@@ -57,19 +57,13 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<script type="text/javascript">
-		function getParameterByName(name) {
-			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(location.search);
-			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-		}
-		
+<script type="text/javascript">		
 		var onChildLoaded = function() {
-			if (getParameterByName("code") == "true") {
+			if (window.location.toString().contains("code=true")) {
 				var frame = document.getElementById("snap");
 				frame.contentWindow.shrink();
 			}
+			setHelperContents();
 		};
 </script>
 </body>

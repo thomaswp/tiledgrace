@@ -220,27 +220,6 @@ extendDialect("logo", "StandardGrace");
 
 dialects.hoc = {
     methods: {
-        "goToX()Y": {
-            name: "goToX()Y",
-            parts: [
-				{name: "goToX", args: ["Number"], description: "The X coordinate"}, 
-				{name:"Y", args: ["Number"], description: "The Y coordinate"}
-			],
-            description: "Moves Alonzo to the given coordinates",
-            returns: "Done"
-        },
-		"turnAround": {
-            name: "turnAround",
-            parts: [{name: "turnAround", args: []}],
-            description: "Turns Alonzo around",
-            returns: "Done"
-        },
-		"say": {
-			name: "say",
-			parts: [{name: "say", args: ["String"], description: "The message for Alonzo to say"}],
-			description: "Have Alonzo say something",
-			returns: "Done"
-		},
 		"pickRandom()To" : {
 			name: "pickRandom()To",
 			parts: [
@@ -248,25 +227,59 @@ dialects.hoc = {
 				{name: "To", args: ["Number"], description: "The maximum value"}
 			],
 			description: "Pick a random number between two numbers",
-			returns: "Number"
+			returns: "Number",
+			category: "Expression"
+		},
+        "goToX()Y": {
+            name: "goToX()Y",
+            parts: [
+				{name: "goToX", args: ["Number"], description: "The X coordinate"}, 
+				{name:"Y", args: ["Number"], description: "The Y coordinate"}
+			],
+            description: "Moves Alonzo to the given coordinates",
+            returns: "Done",
+			category: "Movement"
+        },
+		"turnAround": {
+            name: "turnAround",
+            parts: [{name: "turnAround", args: []}],
+            description: "Turns Alonzo around",
+            returns: "Done",
+			category: "Movement"
+        },
+		"say": {
+			name: "say",
+			parts: [{name: "say", args: ["String"], description: "The message for Alonzo to say"}],
+			description: "Have Alonzo say something",
+			returns: "Done",
+			category: "Speech"
 		},
 		"penDown": {
             name: "penDown",
             parts: [{name: "penDown", args: []}],
             description: "Starts drawing under Alonzo",
-            returns: "Done"
+            returns: "Done",
+			category: "Pen"
         },
 		"penUp": {
             name: "penUp",
             parts: [{name: "penUp", args: []}],
             description: "Stops drawing under Alonzo",
-            returns: "Done"
+            returns: "Done",
+			category: "Pen"
         },
 		"clear": {
             name: "clear",
             parts: [{name: "clear", args: []}],
             description: "Clears all pen drawings",
-            returns: "Done"
+            returns: "Done",
+			category: "Pen"
+        },
+		"wait": {
+            name: "wait",
+            parts: [{name: "wait", args: [{type: 'Number', description: "How many seconds to wait."}]}],
+            returns: "Done",
+			category: "Control"
         },
 		"whenClicked": {
             name: "whenClicked",
@@ -280,7 +293,8 @@ dialects.hoc = {
             multiline: true,
             selfcall: true,
             description: "Have something happen when Alonzo is clicked",
-            toplevel: true
+            toplevel: true,
+			category: "Control"
         },
 		"forever": {
             name: "forever",
@@ -294,17 +308,11 @@ dialects.hoc = {
             multiline: true,
             selfcall: true,
             description: "Do something forever",
-            toplevel: true
-        },
-		"wait": {
-            name: "wait",
-            parts: [{name: "wait", args: [{type: 'Number', description: "How many seconds to wait."}]}],
-            returns: "Done",
+            toplevel: true,
+			category: "Control"
         },
     }
 };
-for (var k in dialects.hoc.methods)
-    dialects.hoc.methods[k].category = "Hour of Code";
 extendDialect("hoc", "StandardGrace");
 
 

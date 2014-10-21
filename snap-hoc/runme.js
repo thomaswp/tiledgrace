@@ -9,6 +9,7 @@ var waitForFinalEvent = (function () {
 })();
 
 var current_lesson = 0;
+var maxLesson = -1;
 
 var congrats_html = null;
 
@@ -153,8 +154,8 @@ var tileList = [
 	["say", "string"],
 	["forever", "wait"],
 	["var", "vardec", "assign"],
-	["operator"],
-	["comparison-operator", "if()then"],
+	["numeric-operators"],
+	["comparison-operators", "if()then"],
 	[],
 	["penDown", "penUp", "clear"],
 ];
@@ -181,13 +182,6 @@ function btn_click () {
     }
   }
   
-  var funcs = [];
-  for (var i = 0; i <= index && i < tileList.length; i++) {
-	funcs = funcs.concat(tileList[i]);
-  }
-  var frame = document.getElementById("snap");
-  frame.contentWindow.setPane(funcs);
-  
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson + 1 === btn_to_name.length) {
@@ -213,10 +207,26 @@ function btn_click () {
   load_left(index, function (leftText) {
     $('#left').html(leftText);
   });
-  prepare_modal(current_lesson, function () {
-    $('#myModal').modal('toggle');
-  });
+  if (index > maxLesson) {
+	maxLesson = index
+	prepare_modal(current_lesson, function () {
+		$('#myModal').modal('toggle');
+	});
+  }
   first_click = false;
+  
+  setHelperContents();
+}
+
+function setHelperContents() {
+  var funcs = [];
+  for (var i = 0; i <= current_lesson && i < tileList.length; i++) {
+	funcs = funcs.concat(tileList[i]);
+  }
+  var frame = document.getElementById("snap");
+  frame.contentWindow.setPane(funcs);
+  
+  frame.contentWindow.getElementById("stdout_txt").setText("!!!");
 }
 
 function next_lesson() {
