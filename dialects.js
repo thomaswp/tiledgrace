@@ -112,6 +112,7 @@ var StandardGrace = {
             returns: "Done",
             description: "If a condition is true, do something.",
             multiline: true,
+			code: "if ( ) then {\n    <span class='comment'>//code goes here!</span>\n}",
         },
         "if()then()else": {
             name: "if()then()else",
@@ -228,7 +229,8 @@ dialects.hoc = {
 			],
 			description: "Pick a random number between two numbers",
 			returns: "Number",
-			category: "Expression"
+			category: "Expression",
+			code: "pickRandom (<span class='number'>0</span>) To (<span class='number'>0</span>)",
 		},
         "goToX()Y": {
             name: "goToX()Y",
@@ -238,48 +240,55 @@ dialects.hoc = {
 			],
             description: "Moves Alonzo to the given coordinates",
             returns: "Done",
-			category: "Movement"
+			category: "Movement",
+			code: "goToX (<span class='number'>0</span>) Y (<span class='number'>0</span>)",
         },
 		"turnAround": {
             name: "turnAround",
             parts: [{name: "turnAround", args: []}],
             description: "Turns Alonzo around",
             returns: "Done",
-			category: "Movement"
+			category: "Movement",
+			code: "turnAround",
         },
 		"say": {
 			name: "say",
 			parts: [{name: "say", args: ["String"], description: "The message for Alonzo to say"}],
 			description: "Have Alonzo say something",
 			returns: "Done",
-			category: "Speech"
+			category: "Speech",
+			code: "say (<span class='string'>\"Hello World!\"</span>)",
 		},
 		"penDown": {
             name: "penDown",
             parts: [{name: "penDown", args: []}],
             description: "Starts drawing under Alonzo",
             returns: "Done",
-			category: "Pen"
+			category: "Pen",
+			code: "penDown",
         },
 		"penUp": {
             name: "penUp",
             parts: [{name: "penUp", args: []}],
             description: "Stops drawing under Alonzo",
             returns: "Done",
-			category: "Pen"
+			category: "Pen",
+			code: "penUp",
         },
 		"clear": {
             name: "clear",
             parts: [{name: "clear", args: []}],
             description: "Clears all pen drawings",
             returns: "Done",
-			category: "Pen"
+			category: "Pen",
+			code: "clear",
         },
 		"wait": {
             name: "wait",
             parts: [{name: "wait", args: [{type: 'Number', description: "How many seconds to wait."}]}],
             returns: "Done",
-			category: "Control"
+			category: "Control",
+			code: "wait (<span class='number'>0</span>)",
         },
 		"whenClicked": {
             name: "whenClicked",
@@ -294,7 +303,8 @@ dialects.hoc = {
             selfcall: true,
             description: "Have something happen when Alonzo is clicked",
             toplevel: true,
-			category: "Control"
+			category: "Control",
+			code: "whenClicked {\n    <span class='comment'>// code goes here!</span>\n}",
         },
 		"forever": {
             name: "forever",
@@ -309,7 +319,8 @@ dialects.hoc = {
             selfcall: true,
             description: "Do something forever",
             toplevel: true,
-			category: "Control"
+			category: "Control",
+			code: "forever {\n    <span class='comment'>// code goes here!</span>\n}",
         },
     }
 };

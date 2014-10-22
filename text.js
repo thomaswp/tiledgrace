@@ -4,6 +4,7 @@ var growFuncs = [];
 function shrink(snap) {
     if (highlightTileErrors())
         return;
+	document.getElementById("code_help").classList.remove("hidden");
     var viewButton = document.getElementById('viewbutton');
     viewButton.disabled = "disabled";
     editor.setValue(document.getElementById('gracecode').value, -1);
@@ -71,6 +72,7 @@ function grow() {
         editor.getSession().clearAnnotations();
         rebuildTilesInBackground(minigrace.generated_output);
     }
+	document.getElementById("code_help").classList.add("hidden");
     var viewButton = document.getElementById('viewbutton');
     viewButton.disabled = "disabled";
     document.getElementById('indicator').style.background = 'green';

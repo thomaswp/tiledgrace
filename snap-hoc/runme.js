@@ -71,7 +71,7 @@ var idx_to_title = [
 var btn_to_left = [
   ];
   
-var codeHelp = [];
+var codeHelp = {};
 
 function preload_left () {
   for (var i = 0; i < nLessons; i++) {
@@ -81,15 +81,6 @@ function preload_left () {
       return function () {
 		if (this.status != 200) return;
       	btn_to_left[idx] = this.status == 200 ? this.responseText : "";
-    } }(i);
-    request.open("get", url, true);
-    request.send();
-	
-	url = "code-sample/code" + i + '.html';
-    request = new XMLHttpRequest ();
-    request.onload = function(idx) {
-      return function () {
-      	codeHelp[idx] = this.status == 200 ? this.responseText : "";
     } }(i);
     request.open("get", url, true);
     request.send();
@@ -148,16 +139,6 @@ function load_left (idx, callback) {
   }
   else {
     setTimeout(function () {load_left(idx, callback)}, 100);
-  }
-}
-
-function load_code (idx, callback) {
-  var codeText = codeHelp[idx];
-  if (codeText !== undefined) {
-    callback(codeText);
-  }
-  else {
-    setTimeout(function () {load_code(idx, callback)}, 100);
   }
 }
 
@@ -237,11 +218,6 @@ function setHelperContents() {
   }
   var frame = document.getElementById("snap");
   frame.contentWindow.setPane(funcs);
-  
-  load_code(current_lesson, function(text) {
-	var innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
-	innerDoc.getElementById("code_help").innerHTML = text;
-  });  
 }
 
 function next_lesson() {

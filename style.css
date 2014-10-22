@@ -1,7 +1,12 @@
+#code_help {
+	overflow: auto;
+}
+
 #code_help pre {
 	white-space: pre-wrap;
 	font-family: "Courier New", Courier, monospace;
-	padding: 15px;
+	padding: 10px;
+	border-left: 5px;
 	background: #f5f5f5; 
 	background: -moz-linear-gradient(top,  #f5f5f5 0%, #efefef 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
@@ -14,8 +19,24 @@
 	border:1px solid #d8d8d8;
 }
 
+#code_help h3 {
+	
+}
+
 #code_help .comment {
 	color: green;
+}
+
+#code_help .string {
+	color: green;
+}
+
+#code_help .number {
+	color: blue;
+}
+
+.hidden {
+	display: none;
 }
 
 @font-face {

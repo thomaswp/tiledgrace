@@ -158,6 +158,18 @@ function setPane(list) {
 		}
         node.style.display = visible ? "" : "none";	
 	}
+	
+	var div = document.getElementById("code_help");
+	div.innerHTML = "<h3>Code Pallet:</h3>";
+	for (var i=0; i < list.length; i++) {	
+		var method = StandardGrace.methods[list[i]];
+		if (currentDialect && currentDialect.methods[list[i]]) {
+			method = currentDialect.methods[list[i]];
+		}
+		if (method && method.code) {
+			div.innerHTML += "<pre>" + method.code + "</pre>\n";
+		}
+	}
 }
 
 function attachTileBehaviour(n) {
