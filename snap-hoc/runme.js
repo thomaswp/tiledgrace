@@ -1,3 +1,6 @@
+var codeMode = window.location.toString().contains("code=true");
+var nLessons = 10;
+
 var waitForFinalEvent = (function () {
   var timers = {};
   return function (callback, ms, uniqueId) {
@@ -50,18 +53,6 @@ function check_lg_buttons () {
   }
 }
 
-var btn_to_name = [
-  "bjchoc_00",
-  "bjchoc_01",
-  "bjchoc_02",
-  "bjchoc_03",
-  "bjchoc_04",
-  "bjchoc_05",
-  "bjchoc_06",
-  "bjchoc_07",
-  "bjchoc_08",
-  "bjchoc_09",
-  ];
 
 var idx_to_title = [
   "",
@@ -79,14 +70,26 @@ var idx_to_title = [
 
 var btn_to_left = [
   ];
+  
+var codeHelp = [];
 
 function preload_left () {
-  for (var i in btn_to_name) {
-    var url = btn_to_name[i] + '.html';
+  for (var i = 0; i < nLessons; i++) {
+    var url = (codeMode ? "code" : "block") + "-help/bjchoc_0" + i + '.html';
     var request = new XMLHttpRequest ();
     request.onload = function(idx) {
       return function () {
-      	btn_to_left[idx] = this.responseText;
+		if (this.status != 200) return;
+      	btn_to_left[idx] = this.status == 200 ? this.responseText : "";
+    } }(i);
+    request.open("get", url, true);
+    request.send();
+	
+	url = "code-sample/code" + i + '.html';
+    request = new XMLHttpRequest ();
+    request.onload = function(idx) {
+      return function () {
+      	codeHelp[idx] = this.status == 200 ? this.responseText : "";
     } }(i);
     request.open("get", url, true);
     request.send();
@@ -109,7 +112,7 @@ function place_in_corral_cover(elems) {
 }
 
 function do_it_for_me() {
-  if (current_lesson !== btn_to_name.length - 1) {
+  if (current_lesson !== nLessons - 1) {
 
   }
   // The do it for me button should not exist otherwise.
@@ -148,6 +151,16 @@ function load_left (idx, callback) {
   }
 }
 
+function load_code (idx, callback) {
+  var codeText = codeHelp[idx];
+  if (codeText !== undefined) {
+    callback(codeText);
+  }
+  else {
+    setTimeout(function () {load_code(idx, callback)}, 100);
+  }
+}
+
 var tileList = [
 	["whenClicked", "turnAround"],
 	["number", "goToX()Y", "pickRandom()To"],
@@ -162,10 +175,9 @@ var tileList = [
 
 function btn_click () {
   var index = parseInt($(this).data('index'));
-  var name = btn_to_name[index];
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
-  if (index === btn_to_name.length - 1) {
+  if (index === nLessons - 1) {
     $('#corral-cover').addClass('my-hidden');
   }
   else {
@@ -184,7 +196,7 @@ function btn_click () {
   
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
-  if (current_lesson + 1 === btn_to_name.length) {
+  if (current_lesson === nLessons - 1) {
     $('#done-button').removeClass('hidden');
     $('#snaplogo-img').addClass('hidden');
     $('#page-subtitle').addClass('hidden');
@@ -194,7 +206,7 @@ function btn_click () {
     $('#next-button').removeClass('hidden');
   }
   location.hash = "#" + (current_lesson + 1);
-  if (current_lesson !== btn_to_name.length - 1) {
+  if (current_lesson !== nLessons - 1) {
     place_in_corral_cover([
       corralBtn('Show me the answer.', show_answer),
       corralBtn('Replace my code.', fix_code)
@@ -226,7 +238,10 @@ function setHelperContents() {
   var frame = document.getElementById("snap");
   frame.contentWindow.setPane(funcs);
   
-  frame.contentWindow.getElementById("stdout_txt").setText("!!!");
+  load_code(current_lesson, function(text) {
+	var innerDoc = (frame.contentDocument) ? frame.contentDocument : frame.contentWindow.document;
+	innerDoc.getElementById("code_help").innerHTML = text;
+  });  
 }
 
 function next_lesson() {
@@ -237,7 +252,7 @@ function prepare_modal(idx, callback) {
   load_left(idx, function (leftText) {
     $('.modal-title').html(idx_to_title[idx]);
     $.ajax({
-      url : "modaltext/" + btn_to_name[idx] + "_modal.html",
+      url : "modaltext/bjchoc_0" + idx + "_modal.html",
       dataType: "text",
       success : function (data) {
         $('.modal-body').html(data);
@@ -275,8 +290,7 @@ $(window).load(function () {
     current_lesson = parseInt(num) - 1;
   }
 
-  for ( i in btn_to_name ) {
-    i = parseInt(i);
+  for ( var i = 0; i < nLessons; i++ ) {
     top_buttons.append($('<button>',
       {class:'btn-top btn btn-lg btn-default'})
       .text('#' + (i + 1)).data('index', i).on('click', btn_click));

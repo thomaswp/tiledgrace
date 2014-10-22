@@ -57,14 +57,15 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<script type="text/javascript">		
-		var onChildLoaded = function() {
-			if (window.location.toString().contains("code=true")) {
-				var frame = document.getElementById("snap");
-				frame.contentWindow.shrink();
-			}
-			setHelperContents();
-		};
+<script type="text/javascript">
+	var codeMode = window.location.toString().contains("code=true");
+	var onChildLoaded = function() {
+		if (codeMode) {
+			var frame = document.getElementById("snap");
+			frame.contentWindow.shrink();
+		}
+		setHelperContents();
+	};
 </script>
 </body>
 
