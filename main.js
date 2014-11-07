@@ -160,16 +160,21 @@ function setPane(list) {
 	}
 	
 	var div = document.getElementById("code_help");
-	div.innerHTML = "<h3>Code Pallet:</h3>";
+	var innerHTML = "<h3 class='pallet'>Code Pallet:</h3>";
 	for (var i=0; i < list.length; i++) {	
 		var method = StandardGrace.methods[list[i]];
 		if (currentDialect && currentDialect.methods[list[i]]) {
 			method = currentDialect.methods[list[i]];
 		}
 		if (method && method.code) {
-			div.innerHTML += "<pre>" + method.code + "</pre>\n";
+			innerHTML += "<pre";
+			if (method.description) {
+				innerHTML += " title='" + method.description + "'";
+			}
+			innerHTML += "<pre>" + method.code + "</pre>\n";
 		}
 	}
+	div.innerHTML = innerHTML;
 }
 
 function attachTileBehaviour(n) {

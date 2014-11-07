@@ -35,6 +35,10 @@
 	color: blue;
 }
 
+.pallet {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .hidden {
 	display: none;
 }
