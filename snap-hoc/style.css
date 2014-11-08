@@ -6,6 +6,14 @@ body {
   overflow: hidden;
 }
 
+code {
+	color: black;
+}
+
+code.comment {
+	color: green;
+}
+
 #top {
   background-color: #131141;
   height: 5em;
@@ -104,7 +112,7 @@ body {
 
 #left {
   overflow-y: auto;
-  height: calc(100% - 200px);
+  height: calc(100% - 140px);
 }
 
 #right {
@@ -133,7 +141,7 @@ body {
 }
 
 .btn-corral-cover {
-  margin: 2em 0;
+  margin: 0.75em 0;
   width: 100%;
 }
 

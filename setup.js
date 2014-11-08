@@ -212,6 +212,7 @@ minigrace.stdout_write = function(value) {
 };
 
 (function(canvas){
+/*
     canvas.addEventListener('dblclick', function(ev) {
         if (this.classList.contains('big')) {
             this.classList.remove('big');
@@ -220,6 +221,7 @@ minigrace.stdout_write = function(value) {
         }
         ev.preventDefault();
     });
+**/
     var ctx = canvas.getContext("2d")
     ctx.lineWidth = 1;
     ctx.fillStyle = "white";
