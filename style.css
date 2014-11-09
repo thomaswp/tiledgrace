@@ -1,7 +1,7 @@
 #code_help {
 	overflow: auto;
     margin-top: 280px;
-    height: calc(100% - 285px);
+    height: calc(100% - 335px);
     width: 360px;
 }
 
@@ -129,6 +129,7 @@ html, body {
     margin-top: 370px;
     height: calc(100% - 375px);
     width: 360px;
+	display: none;
 }
 
 #standard-canvas {

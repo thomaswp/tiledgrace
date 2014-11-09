@@ -171,7 +171,7 @@ function setPane(list) {
 			if (method.description) {
 				innerHTML += " title='" + method.description + "'";
 			}
-			innerHTML += "<pre>" + method.code + "</pre>\n";
+			innerHTML += ">" + method.code + "</pre>\n";
 		}
 	}
 	div.innerHTML = innerHTML;
