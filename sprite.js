@@ -11,6 +11,7 @@ function Sprite(path) {
 	this.userCode = null;
 	this.penTrails = [];
 	this.penDown = false;
+	this.trailSegs = 0;
 	
 	var scale = 1;
 	var ready = false;
@@ -127,8 +128,9 @@ function Sprite(path) {
 		x *= scale; y *= scale;
 		sprite.x = x;
 		sprite.y = y;
-		if (sprite.penDown == true) {
+		if (sprite.penDown == true && sprite.trailSegs < 50) {
 			sprite.penTrails[sprite.penTrails.length - 1].push([sprite.x, sprite.y]);
+			sprite.trailSegs++;
 		}
 	};
 	
@@ -156,9 +158,14 @@ function Sprite(path) {
 	
 	this.clear = function() {
 		sprite.penTrails = [];
+		trailSegs = 0;
+		if (sprite.penDown) {
+			sprite.penTrails.push([[sprite.x, sprite.y]]);
+		}
 	}
 	
 	this.penDown = function() {
+		if (sprite.penDown) return;
 		sprite.penDown = true;
 		sprite.penTrails.push([[sprite.x, sprite.y]]);
 	}
@@ -189,7 +196,7 @@ function Sprite(path) {
 			clearTimeout(this.timeouts[timeout]);
 		}
 		this.timeouts = {};
-		this.penTrail = [];
+		this.penTrails = [];
 		this.penDown = false;
 	}
 	

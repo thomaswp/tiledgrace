@@ -147,9 +147,9 @@ var tileList = [
 	["number", "goToX()Y", "pickRandom()To"],
 	["say", "string"],
 	["forever", "wait"],
-	["var", "vardec", "assign"],
-	["numeric-operators"],
-	["comparison-operators", "if()then"],
+	["var", "vardec", "assign", "minus"],
+	["plus"],
+	["greaterthan", "if()then"],
 	[],
 	["penDown", "penUp", "clear"],
 ];

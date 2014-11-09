@@ -1,25 +1,26 @@
 dialect "hoc"
 
+var delay := 2
 var score := 0
 var maxScore := 0
-var delay := 2
 whenClicked {
-    say ("")
-    score := score + 11
-    if (score > maxScore) then {
+    say ""
+    delay := delay - 0.1
+    score := score + 10
+    if (maxScore < score) then {
         maxScore := score
-    }
-    if (delay > 0.1) then {
-        delay := delay - 0.1
+        clear
     }
     forever {
-        goToX (pickRandom (-130) To (130)) Y (pickRandom (-130) To (130))
+        goToX( pickRandom (-190) To (190) ) Y ( pickRandom (-130) To (130) )
         turnAround
-        score := score - 1
+        if (score > 0) then {
+            score := score - 1
+        }
         wait (delay)
     }
 }
+
 goToX (-190) Y (130)
 say ("Welcome to the hour of code")
-
-// chunks: 186px,147px
+penDown

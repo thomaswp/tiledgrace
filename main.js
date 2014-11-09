@@ -166,10 +166,52 @@ function setPane(list) {
 		if (currentDialect && currentDialect.methods[list[i]]) {
 			method = currentDialect.methods[list[i]];
 		}
+		if (!method) {
+			if (list[i] === "vardec") {
+				method = {
+					code: "var x := 0",
+					description: "Creates a variable with a starting value.",
+					returns: "Done"
+				};
+			} else if (list[i] === "assign") {
+				method = {
+					code: "x := 0",
+					description: "Assigns a variable to a given value.",
+					returns: "Done"
+				};
+			} else if (list[i] === "plus") {
+				method = {
+					code: "x + y",
+					description: "Adds two numbers together.",
+					returns: "Number"
+				};
+			} else if (list[i] === "minus") {
+				method = {
+					code: "x - y",
+					description: "Subtracts one number from another.",
+					returns: "Number"
+				};
+			} else if (list[i] === "greaterthan") {
+				method = {
+					code: "x > y",
+					description: "True if x > y.",
+					returns: "Boolean"
+				};
+			} else if (list[i] === "var") {
+				method = {
+					code: "x",
+					description: "Assigns a variable to a given value.",
+					returns: "Number"
+				};
+			}
+		}
 		if (method && method.code) {
 			innerHTML += "<pre";
 			if (method.description) {
 				innerHTML += " title='" + method.description + "'";
+			}
+			if (method.returns !== "Done") {
+				innerHTML += " class='returns'";
 			}
 			innerHTML += ">" + method.code + "</pre>\n";
 		}

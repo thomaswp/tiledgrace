@@ -58,7 +58,7 @@
 </div><!-- /.modal -->
 
 <script type="text/javascript">
-	var codeMode = window.location.toString().contains("code=true");
+	var codeMode = window.location.toString().indexOf("code=true") >= 0;
 	var onChildLoaded = function() {
 		if (codeMode) {
 			var frame = document.getElementById("snap");

@@ -21,9 +21,13 @@
          <div class="tile defdec" data-tile-name="defdec" data-category="Variables"><span style="margin-right: 1ex; color: blue;">def</span><input type="text" value="" size="1" class="variable-name"><span class="assop">=</span><div class="hole"></div></div>
          <div class="tile var returns" data-tile-name="var" data-category="Variables"><span class="var-name">Variable</span></div>
          <div class="tile assign" data-tile-name="assign" data-category="Variables"><div class="hole bind-lhs"></div><span class="assop">:=</span><div class="hole"></div></div>
-         <div class="tile operator returns" data-tile-name="numeric-operators" data-category="Numbers and Strings" data-types="Number" data-operators="+ * - /"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="+ * - /">+</div><div class="hole number" data-accepts="Number"></div></div>
+         <div class="tile operator returns" data-tile-name="plus" data-category="Numbers and Strings" data-types="Number" data-operators="+"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="+">+</div><div class="hole number" data-accepts="Number"></div></div>
+		 <div class="tile operator returns" data-tile-name="minus" data-category="Numbers and Strings" data-types="Number" data-operators="-"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="-">-</div><div class="hole number" data-accepts="Number"></div></div>
+		 <div class="tile operator returns" data-tile-name="numeric-operators" data-category="Numbers and Strings" data-types="Number" data-operators="- + * /"><div class="hole number" data-accepts="Number"></div><div class="op" data-operators="- + * /">-</div><div class="hole number" data-accepts="Number"></div></div>
          <div class="tile operator returns" data-tile-name="increment" data-category="Numbers and Strings" data-types="String" data-operators="++"><div class="hole" data-accepts="String"></div><div class="op">++</div><div class="hole" data-accepts="String"></div></div>
-         <div class="tile comparison-operator returns" data-tile-name="comparison-operators" data-category="Numbers and Strings" data-types="Boolean" data-operators="== < >"><div class="hole number"></div><div class="cmpop">==</div><div class="hole number"></div></div>
+         <div class="tile comparison-operator returns" data-tile-name="equals" data-category="Numbers and Strings" data-types="Boolean" data-operators="=="><div class="hole number"></div><div class="cmpop">></div><div class="hole number"></div></div>
+		 <div class="tile comparison-operator returns" data-tile-name="greaterthan" data-category="Numbers and Strings" data-types="Boolean" data-operators=">"><div class="hole number"></div><div class="cmpop">></div><div class="hole number"></div></div>
+		 <div class="tile comparison-operator returns" data-tile-name="comparison-operators" data-category="Numbers and Strings" data-types="Boolean" data-operators="> < =="><div class="hole number"></div><div class="cmpop">></div><div class="hole number"></div></div>
          <div class="tile number returns" data-tile-name="number" data-category="Numbers and Strings" data-types="Number"><input type="text" value="0" size="3" ></div>
          <div class="tile operator iterable returns" data-category="Numbers and Strings" data-types="Iterable" data-operators=".."><div class="hole number"></div><div class="op">..</div><div class="hole number"></div></div>
          <div class="tile string returns" data-tile-name="string" data-types="String Iterable" data-category="Numbers and Strings">"<input type="text" value="Hello, world!" size="13" >"</div>
@@ -112,16 +116,9 @@
 			} catch (E) { }
 		};
 		
-		function getParameterByName(name) {
-			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(location.search);
-			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-		}
-		
 		$().ready(function() {
 			if (parent && parent.onChildLoaded) parent.onChildLoaded();
-			if (getParameterByName("code") == "true") {
+			if (window.location.toString().indexOf("code=true") >= 0) {
 				shrink();
 			}
 		});
