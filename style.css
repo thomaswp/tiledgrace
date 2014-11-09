@@ -1,5 +1,8 @@
 #code_help {
 	overflow: auto;
+    margin-top: 280px;
+    height: calc(100% - 285px);
+    width: 360px;
 }
 
 #code_help pre {
@@ -58,7 +61,7 @@ html, body {
     display: -ms-flexbox;
 }
 #code_txt_real {
-    width: calc(100% - 495px);
+    width: calc(100% - 375px);
     height: 90vh; /* Work around Chrome bug 168840*/
     height: calc(99vh - 40px);
 }
@@ -80,7 +83,7 @@ html, body {
     opacity: 0.7;
 }
 #codearea {
-    width: calc(100% - 690px);
+    width: calc(100% - 200px - 370px);
     height: 90vh; /* Work around Chrome bug 168840*/
     height: calc(99vh - 35px);
     background: #ddd;
@@ -117,7 +120,7 @@ html, body {
     pointer-events: none;
 }
 #outputarea {
-    width: 490x;
+    width: 370x;
     order: 3;
     -webkit-order: 3;
     -ms-flex-order: 3;
@@ -125,20 +128,14 @@ html, body {
 #outputarea textarea {
     margin-top: 370px;
     height: calc(100% - 375px);
-    width: 480px;
-}
-
-#code_help {
-    margin-top: 370px;
-    height: calc(100% - 375px);
-    width: 480px;
+    width: 360px;
 }
 
 #standard-canvas {
     z-index: 400;
     border: 1px solid black;
     position: absolute;
-    left: calc(100% - 490px);
+    left: calc(100% - 370px);
     top: 2px;
     transition: width 0.5s, height 0.5s, left 0.5s, top 0.5s;
 }
@@ -150,46 +147,48 @@ html, body {
     top: calc(50% - 250px);
     left: calc(50% - 250px);
 }
+
 .tile, .hole {
     border-radius: 5px;
 }
 .tile.operator {
     background: hsl(175, 80%, 40%);
-    border: 2px outset hsl(120, 25%, 50%);
+    border: 1px outset hsl(120, 25%, 50%);
 }
 .tile.comparison-operator {
     background: hsl(175, 80%, 40%);
-    border: 2px outset hsl(240, 75%, 25%);
+    border: 1px outset hsl(240, 75%, 25%);
 }
 .tile.request {
     background: hsl(300, 75%, 50%);
-    border: 2px outset hsl(300, 75%, 25%);
+    border: 1px outset hsl(300, 75%, 25%);
 }
 .tile.vardec {
     background: hsl(0, 75%, 60%);
-    border: 2px outset hsl(0, 75%, 30%);
+    border: 1px outset hsl(0, 75%, 30%);
 }
 .tile.defdec {
     background: hsl(345, 75%, 60%);
-    border: 2px outset hsl(345, 75%, 30%);
+    border: 1px outset hsl(345, 75%, 30%);
 }
 .tile.var {
     background: hsl(0, 55%, 60%);
-    border: 2px outset hsl(0, 75%, 65%);
+    border: 1px outset hsl(0, 75%, 65%);
 }
 .tile.assign {
     background: hsl(0, 55%, 60%);
-    border: 2px outset hsl(0, 50%, 75%);
+    border: 1px outset hsl(0, 50%, 75%);
 }
 .tile.number {
     background: hsl(120, 75%, 50%);
-    border-top: 2px outset;
-    border-bottom: 2px inset;
-    border-left: 8px outset;
-    border-right: 8px inset;
-    border-radius: 50%/35%;
-    border-color: hsl(120, 75%, 25%);
+    border: 1px outset hsl(120, 75%, 25%);
 }
+
+.tile.returns {
+    padding: 0.05em 0.5em;
+    border-radius: 1em;
+}
+
 input {
     border-radius: 3px;
 }
@@ -414,7 +413,7 @@ input {
 }
 .tile input[type=text] {
     font-family: 'Monaco','Menlo','Ubuntu Mono','Droid Sans Mono','Consolas',monospace;
-    font-size: 14px;
+    font-size: 1.1em;
 }
 .var-name::after {
     content: "\e760";
@@ -714,7 +713,13 @@ ul.popup-menu li:hover {
     z-index: 300;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 1200px) {
+	body {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 20px) {
     #codearea {
         width: calc(100% - 205px);
     }
