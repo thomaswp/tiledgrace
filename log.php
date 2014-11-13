@@ -1,16 +1,31 @@
 <?php
 $data = file_get_contents("php://input");
-$existing = file_get_contents("eventlog.results");
 if ($data == "") {
-	$data = "[]";
+	return;
 }
-if ($existing == "null") {
-	$existing = "[]";
+
+$json = json_decode($data, true);
+$table = $json["table"];
+$userID = $json["userID"];
+$time = $json["time"];
+$type = $json["type"];
+$data = json_encode($json["data"]);
+
+$servername = "localhost";
+$username = "grace";
+$password = "rAbuguBeprA4";
+
+$conn = new mysqli($servername, $username, $password);
+if ($conn->connect_erro) {
+	die("Connection failed");
 }
-$json1 = json_decode($existing, true);
-$json2 = json_decode($data, true);
-$json = array_merge($json1, $json2);
-$fp = fopen("eventlog.results", "w");
-//fwrite($fp, $data);
-fwrite($fp, json_encode($json));
-fclose($fp);
+
+$sql = "INSERT INTO $table (userID, time, type, data) VALUES($userID, $time, $type, $data)";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
