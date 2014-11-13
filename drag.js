@@ -66,6 +66,7 @@ function dragstart(ev) {
         hadDragContinue = true;
         var top = (ev2.clientY - offsetY);
         var left = (ev2.clientX - offsetX);
+        logEvent('drag-continue', {top: top, left: left});
         obj.style.top = top + 'px';
         obj.style.left = left + 'px';
         top += codearea.scrollTop;
@@ -73,6 +74,8 @@ function dragstart(ev) {
         ev2.preventDefault();
         var tmp = obj;
         var overBin = isOverBin(ev2);
+        if (overBin)
+            logEvent('drag-over-bin', {});
         var tmp = obj;
         while (tmp) {
             if (overBin)
@@ -110,7 +113,9 @@ function dragstart(ev) {
             if (!holeCanHoldTile(bestHole, obj, reason)) {
                 bestHole.style.background = 'pink';
                 overlayError(reason.error, bestHole);
-            }
+                logEvent('drag-over-invalid-hole', {reason: reason.error});
+            } else
+                logEvent('drag-over-valid-hole', {});
         }
         var tmp = obj;
         while (typeof tmp.next != "undefined" && tmp.next) {
@@ -130,6 +135,7 @@ function dragstart(ev) {
                 continue;
             if (isBottomTarget(ch, obj)) {
                 ch.classList.add('bottom-join-target');
+                logEvent('drag-over-join', {});
             } else {
                 ch.classList.remove('bottom-join-target');
             }
@@ -145,6 +151,8 @@ function dragstart(ev) {
     this.style.position = 'absolute';
     this.style.top = xy.top + 'px';
     this.style.left = xy.left + 'px';
+    logEvent('start-drag', {top: xy.top, left: xy.left,
+        node: generateNodeJSON(this)});
     var tmp = this;
     var runningTop = xy.top;
     if (ev.shiftKey) {
@@ -154,6 +162,7 @@ function dragstart(ev) {
             tmp.next.prev = tmp.prev;
         tmp.next = false;
         tmp.prev = false;
+        logEvent('shift-drag', {});
     } else if (tmp.prev) {
         tmp.prev.next = false;
     }
@@ -178,6 +187,7 @@ function dragstart(ev) {
         d.removeEventListener('mouseup', dragend);
         obj.classList.remove('selected');
         if (isOverBin(ev)) {
+            logEvent('delete-tiles', {});
             var tmp = obj;
             while (tmp) {
                 tmp.remove();
@@ -234,10 +244,13 @@ function dragstart(ev) {
                     bestHole.appendChild(tmp);
                     tmp = tmp.next;
                 }
+                logEvent('drop-into-hole', {});
             } else {
                 bestHole = null;
+                logEvent('drop-over-hole');
             }
         }
+        var attachedBottom = false;
         for (var i=0; i<tiles.length; i++) {
             var ch = tiles[i];
             ch.classList.remove('bottom-join-target');
@@ -247,13 +260,17 @@ function dragstart(ev) {
                 continue;
             var t = ch.offsetTop + ch.offsetHeight;
             if (isBottomTarget(ch, obj)) {
+                var inMiddle = false;
                 if (ch.next) {
                     var tmp = obj;
                     while (tmp.next)
                         tmp = tmp.next;
                     tmp.next = ch.next;
                     ch.next.prev = tmp;
+                    inMiddle = true;
                 }
+                attachedBottom = true;
+                logEvent('drop-at-edge', {between: inMiddle});
                 ch.next = obj;
                 obj.prev = ch;
                 var pe = ch.parentElement;
@@ -281,6 +298,7 @@ function dragstart(ev) {
                 break;
             }
         }
+        logEvent('drag-end', {top: top, left: left});
         if (originalHole != null) {
             originalHole.style.width = 'auto';
             originalHole.style.height = 'auto';
@@ -321,6 +339,7 @@ function runOnDrop(tile) {
             tile.childNodes[0].innerHTML = '';
         if (vars.length == 1 && tile.childNodes[0].innerHTML == '') {
             tile.getElementsByClassName('var-name')[0].innerHTML = vars[0];
+            logEvent('rename-var', {from: '', to: vars[0]});
         } else if (vars.length != 0) {
             var curname = tile.childNodes[0].innerHTML;
             for (var i=0; i<vars.length; i++)
@@ -388,6 +407,7 @@ function renameVar(oldValue, newValue, relativeTo) {
                 relativeTo = codearea;
         }
     }
+    logEvent('rename-var', {from: oldValue, to: newValue});
     var tmp = relativeTo;
     while (tmp) {
         var vars = tmp.getElementsByClassName('var-name');

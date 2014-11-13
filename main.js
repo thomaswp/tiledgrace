@@ -6,12 +6,25 @@ var tiles = codearea.getElementsByClassName('tile');
 var supportsPointerEvents = false;
 var blockIndent = 0;
 var chunkLine;
+
+var eventLog = [];
+var eventEpoch = new Date();
+
+function logEvent(name, data) {
+    eventLog.push({
+        name: name,
+        data: data,
+        timestamp: new Date() - eventEpoch,
+    });
+}
+
 function generateHash(obj) {
     return '#' + btoa(encodeURIComponent(JSON.stringify(obj)));
 }
 function checkpointSave() {
     var obj = generateJSObject();
     var progHash = generateHash(obj);
+    logEvent('checkpoint-save', obj);
     if (navigator.userAgent.indexOf("MSIE") == -1)
         history.pushState(obj, "", progHash);
 }
@@ -91,6 +104,10 @@ function popupVarMenu(ev) {
         opt.innerHTML = vars[i];
         opt.addEventListener("click", function(ev) {
             clearPopouts();
+            logEvent('change-var-ref', {
+                from: el.innerHTML,
+                to: ev.target.innerHTML
+            });
             el.innerHTML = ev.target.innerHTML;
             codearea.removeChild(menu);
             updateTileIndicator();
@@ -111,13 +128,16 @@ function popupVarMenu(ev) {
         var msg = "There are no reachable variables from this point in the code.";
         if (mustBeMutable)
             msg = "There are no mutable variables reachable from this point in the code.";
+        logEvent('open-var-menu', {empty: true});
         opt.title = msg;
         opt.addEventListener("click", function(ev) {
             codearea.removeChild(menu);
             alert(msg);
         });
         menu.appendChild(opt);
-    }
+    } else {
+        logEvent('open-var-menu', {empty: false});
+	}
     codearea.appendChild(menu);
     if (menu.offsetLeft + menu.offsetWidth > codearea.offsetWidth) {
         menu.style.left = '';
@@ -129,6 +149,7 @@ function popupVarMenu(ev) {
     }
 }
 function switchPane(category) {
+    logEvent('switch-pane', {to: category});
 	setPane();
 	return;
     var tb = document.getElementById("toolbox");
@@ -142,6 +163,7 @@ function switchPane(category) {
 
 var lastList = []; //stupid hack to get around all the switchPane calls
 function setPane(list) {
+    logEvent('set-pane', list);
 	if (list) {
 		lastList = list;
 	} else {
@@ -329,6 +351,7 @@ function attachTileBehaviour(n) {
                             break;
                         }
                     }
+                    logEvent('change-operator', {from: cur, to: nxt});
                     this.removeChild(this.childNodes[0]);
                     this.appendChild(document.createTextNode(nxt));
                     generateCode();
@@ -341,11 +364,14 @@ function attachTileBehaviour(n) {
                     switch(this.innerHTML) {
                         case "==":
                             this.innerHTML = '&lt;';
+                            logEvent('change-operator', {from: '==', to: '<'});
                             break;
                         case "&lt;":
                             this.innerHTML = '&gt;'
+                            logEvent('change-operator', {from: '<', to: '>'});
                             break;
                         default:
+                            logEvent('change-operator', {from: '>', to: '=='});
                             this.innerHTML = '==';
                     }
                     generateCode();
@@ -380,6 +406,7 @@ function attachInputEvents(el) {
         updateTileIndicator();
         this.size = this.value.length > 0 ? this.value.length : 1;
         coddleBrowser('blink', blinkCoddleInputs, this);
+        logEvent('change-text-input', {value: this.value});
         generateCode();
         checkpointSave();
     });
@@ -412,6 +439,7 @@ function addArgumentToRequest(argAdder) {
 }
 function argumentAdd(ev) {
     addArgumentToRequest(this);
+    logEvent('add-argument', {});
     updateTileIndicator();
     generateCode();
     checkpointSave();
@@ -443,6 +471,7 @@ function addParameterToMethod(paramAdder, name) {
 function parameterRemove(ev) {
     if (this.value != "")
         return;
+    logEvent('remove-parameter', {});
     if (this.previousSibling.nodeType == Node.TEXT_NODE
             && this.previousSibling.data[0] == ",") {
         this.parentNode.removeChild(this.previousSibling);
@@ -465,6 +494,8 @@ function parameterRemove(ev) {
 function parameterAdd(ev) {
     var newParam = addParameterToMethod(this, "");
     newParam.focus();
+    var name = this.getElementsByClassName('method-name')[0].innerHTML;
+    logEvent('add-parameter', {method: name});
 }
 function attachHoleBehaviour(n) {
     n.addEventListener('mouseup', holedrop);
@@ -483,19 +514,28 @@ function attachToolboxBehaviour(n) {
         cl.style.top = (this.offsetTop - toolbox.offsetTop - toolbox.scrollTop + codearea.scrollTop) + 'px';
         cl.style.left = codearea.offsetWidth + 'px';
         attachTileBehaviour(cl);
+        logEvent('new-tile', {type: n.className});
         dragstart.call(cl, ev);
     });
 }
 function go() {
+    var view = codearea.classList.contains('shrink') ? 'text' : 'tiled';
     if (!codearea.classList.contains('shrink')) {
-        if (highlightTileErrors())
+        if (highlightTileErrors()) {
+            var tmp = [];
+            findErroneousTiles(tmp);
+            logEvent('failed-run-attempt', {errors: tmp, view: view});
             return;
+        }
     }
+    logEvent('run-attempt', {view: view});
     generateCode();
     document.getElementById('stderr_txt').value = "";
     document.getElementById('stdout_txt').value = "";
     minigrace.modname = "main";
     minigrace.compilerun(getCode());
+    if (minigrace.compileError)
+        logEvent('compile-error', {code: getCode(), view: view});
 }
 var theBrowser = 'unknown';
 if (navigator.userAgent.search('Chrome') != -1) {

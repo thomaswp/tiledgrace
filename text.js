@@ -27,6 +27,7 @@ function shrink(snap) {
         var offset = document.getElementsByClassName('ace_gutter-cell')[0].offsetHeight;
         if (document.getElementById('dialect').value)
             runningTop += offset;
+	offset--;
         for (var i=0; i<starts.length; i++) {
             starts[i].oldTop = starts[i].style.top;
             starts[i].oldLeft = starts[i].style.left;
@@ -52,17 +53,20 @@ function shrink(snap) {
         }, snap ? 0 : 1100);
     }, snap ? 0 : 700);
 }
-
 function grow() {
     if (editor.getValue() != document.getElementById('gracecode').value) {
         document.getElementById('stderr_txt').value = "";
         minigrace.modname = "main";
         minigrace.mode = "json";
+        var code = editor.getValue();
         minigrace.compile(editor.getValue() + chunkLine);
         minigrace.mode = "js";
         if (minigrace.compileError) {
             var errmsg = showErrorInEditor(document.getElementById('stderr_txt').value);
+            logEvent('foreground-compile-error', {code: code,
+                error: document.getElementById('stderr_txt').value});
             if (confirm("This code did not compile: " + errmsg + "\nDo you want to revert to the previous version that did?")) {
+                logEvent('choose-revert', {from: code, to: document.getElementById('gracecode').value});
                 editor.setValue(document.getElementById('gracecode').value, -1);
                 editor.getSession().clearAnnotations();
                 return;
@@ -102,10 +106,13 @@ function grow() {
     }, 300);
 }
 function toggleShrink() {
-    if (codearea.classList.contains('shrink'))
+    if (codearea.classList.contains('shrink')) {
+        logEvent('switch-view', {to: 'tiled'});
         grow();
-    else
+    } else {
+        logEvent('switch-view', {to: 'text'});
         shrink();
+    }
 }
 function rebuildTilesInBackground(jsonStr) {
     codearea.classList.add("no-transition");

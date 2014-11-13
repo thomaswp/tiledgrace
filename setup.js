@@ -33,6 +33,7 @@ indicator.addEventListener('mouseover', function(ev) {
     var reasons = [];
     var tiles = findErroneousTiles(reasons);
     if (tiles.length > 0) {
+        logEvent('view-tile-errors', {reasons: reasons});
         desaturator.style.width = codearea.scrollWidth + 'px';
         desaturator.style.height = codearea.scrollHeight + 'px';
         desaturator.style.display = 'block';
@@ -316,15 +317,23 @@ setInterval(function() {
             return;
         if (!ev.data.success) {
             document.getElementById('indicator').style.background = 'red';
-            showErrorInEditor(ev.data.stderr)
+            showErrorInEditor(ev.data.stderr);
+			logEvent('background-compile-error', {
+                error: ev.data.stderr,
+                code: ev.data.code
+            });
             return;
         }
+        logEvent('background-compile-success', {
+            code: ev.data.code
+        });
         editor.getSession().clearAnnotations();
         rebuildTilesInBackground(ev.data.output);
         document.getElementById('gracecode').value = editor.getValue();
     document.getElementById('indicator').style.background = 'green';
     }
     document.getElementById('indicator').style.background = 'orange';
+    logEvent('edited-source-text', {code: editor.getValue()});
     bgMinigrace.postMessage({action: "compile", mode: "json",
         modname: "main", source: editor.getValue() + chunkLine});
 
@@ -332,3 +341,17 @@ setInterval(function() {
 setTimeout(function() {
     changeDialect();
 }, 250);
+
+var lastEventLogged = -1;
+setInterval(function() {
+    var newlog = eventLog.slice(lastEventLogged + 1);
+    lastEventLogged = eventLog.length - 1;
+    var log = JSON.stringify(newlog);
+    var xhr = new XMLHttpRequest();
+	xhr.onload = function() {
+		console.log(this.responseText);
+		console.log(this.status);
+	};
+    xhr.open("POST", "log.php");
+    xhr.send(log);
+}, 5000);
