@@ -1,4 +1,5 @@
 "use strict"
+var dragging;
 function findOffsetTopLeft(el) {
     var x = el.offsetLeft;
     var y = el.offsetTop;
@@ -49,6 +50,7 @@ function isOverBin(ev) {
 function dragstart(ev) {
     if (ev.button != 0)
         return;
+    dragging = this;
     var xy = findOffsetTopLeft(this);
     var offsetY = ev.clientY - xy.top;
     var offsetX = ev.clientX - xy.left;
@@ -176,6 +178,7 @@ function dragstart(ev) {
         tmp = tmp.next;
     }
     var dragend = function(ev) {
+        dragging = null;
         overlaidError.style.display = 'none';
         var top = (ev.clientY - offsetY);
         var left = (ev.clientX - offsetX);

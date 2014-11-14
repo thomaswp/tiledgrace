@@ -2,6 +2,7 @@
 var holes = document.getElementsByClassName('hole');
 var codearea = document.getElementById('codearea');
 var toolbox = document.getElementById('toolbox');
+var outputarea = document.getElementById('outputarea');
 var tiles = codearea.getElementsByClassName('tile');
 var supportsPointerEvents = false;
 var blockIndent = 0;
@@ -174,16 +175,16 @@ function setPane(list) {
 		var node = tb.childNodes[i];
 		if (!node.style) continue;
 		var visible = false;
-		for (var j=0; j < list.length; j++) {		
+		for (var j=0; j < list.length; j++) {
 			visible |= node.dataset && node.dataset.tileName == list[j];
 			//visible |= node.classList && node.classList.contains(list[j]);
 		}
-        node.style.display = visible ? "" : "none";	
+        node.style.display = visible ? "" : "none";
 	}
-	
+
 	var div = document.getElementById("code_help");
 	var innerHTML = "<h3 class='pallet'>Code Pallet:</h3>";
-	for (var i=0; i < list.length; i++) {	
+	for (var i=0; i < list.length; i++) {
 		var method = StandardGrace.methods[list[i]];
 		if (currentDialect && currentDialect.methods[list[i]]) {
 			method = currentDialect.methods[list[i]];
@@ -503,6 +504,7 @@ function attachHoleBehaviour(n) {
 }
 function attachToolboxBehaviour(n) {
     n.addEventListener('mousedown', function(ev) {
+        if (dragging) return;
         var cl = this.cloneNode(true);
         if (!cl.dataset) {
             cl.dataset = {};
@@ -511,7 +513,8 @@ function attachToolboxBehaviour(n) {
         }
         codearea.appendChild(cl);
         cl.style.position = 'absolute';
-        cl.style.top = (this.offsetTop - toolbox.offsetTop - toolbox.scrollTop + codearea.scrollTop) + 'px';
+        var offset = $(toolbox).offset();
+        cl.style.top = (this.offsetTop - toolbox.scrollTop + codearea.scrollTop) + 'px';
         cl.style.left = codearea.offsetWidth + 'px';
         attachTileBehaviour(cl);
         logEvent('new-tile', {type: n.className});

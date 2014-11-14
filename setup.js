@@ -352,6 +352,6 @@ setInterval(function() {
 		console.log(this.responseText);
 		console.log(this.status);
 	};
-    xhr.open("POST", "log.php");
-    xhr.send(log);
+    //xhr.open("POST", "log.php");
+    //xhr.send(log);
 }, 5000);
