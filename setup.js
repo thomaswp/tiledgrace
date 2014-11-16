@@ -178,19 +178,19 @@ document.getElementById('category-bar').addEventListener('mouseout',
         }
 );
 document.addEventListener('keypress', function(ev) {
-    if (ev.keyCode == ev.DOM_VK_F5) {
-        ev.preventDefault();
-        go();
-    }
+    // if (ev.keyCode == ev.DOM_VK_F5) {
+    //     ev.preventDefault();
+    //     go();
+    // }
     if (ev.charCode == 114 && ev.target == document.body
             && !ev.ctrlKey && !ev.metaKey) {// "r"
         ev.preventDefault();
         go();
     }
-    if (ev.charCode == 118 && ev.target == document.body) {// "v"
-        ev.preventDefault();
-        toggleShrink();
-    }
+    // if (ev.charCode == 118 && ev.target == document.body) {// "v"
+    //     ev.preventDefault();
+    //     toggleShrink();
+    // }
 });
 var getCode = function() {
     if (codearea.classList.contains("shrink"))
@@ -341,17 +341,3 @@ setInterval(function() {
 setTimeout(function() {
     changeDialect();
 }, 250);
-
-var lastEventLogged = -1;
-setInterval(function() {
-    var newlog = eventLog.slice(lastEventLogged + 1);
-    lastEventLogged = eventLog.length - 1;
-    if (newlog.length == 0) return;
-    var log = JSON.stringify(newlog);
-    var xhr = new XMLHttpRequest();
-	xhr.onload = function() {
-		console.log(this.responseText);
-	};
-    xhr.open("POST", "log.php?userID=testUser");
-    xhr.send(log);
-}, 5000);

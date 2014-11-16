@@ -8,21 +8,6 @@ var supportsPointerEvents = false;
 var blockIndent = 0;
 var chunkLine;
 
-var eventLog = [];
-var eventEpoch = new Date();
-
-function logEvent(type, data) {
-    var date = new Date();
-    var table = type.indexOf("drag") >= 0 ? "drag_logs" : "grace_logs";
-    eventLog.push({
-        type: type,
-        data: data,
-        time: date.getTime(),
-        timestamp: date - eventEpoch,
-        table: table,
-    });
-}
-
 function generateHash(obj) {
     return '#' + btoa(encodeURIComponent(JSON.stringify(obj)));
 }
@@ -154,7 +139,7 @@ function popupVarMenu(ev) {
     }
 }
 function switchPane(category) {
-    logEvent('switch-pane', {to: category});
+    //logEvent('switch-pane', {to: category});
 	setPane();
 	return;
     var tb = document.getElementById("toolbox");
@@ -168,7 +153,7 @@ function switchPane(category) {
 
 var lastList = []; //stupid hack to get around all the switchPane calls
 function setPane(list) {
-    logEvent('set-pane', list);
+    //logEvent('set-pane', list);
 	if (list) {
 		lastList = list;
 	} else {
@@ -233,7 +218,7 @@ function setPane(list) {
 			}
 		}
 		if (method && method.code) {
-			innerHTML += "<pre";
+			innerHTML += "<pre oncopy='onPreCopy(\"" + method.name + "\");'";
 			if (method.description) {
 				innerHTML += " title='" + method.description + "'";
 			}
@@ -244,6 +229,10 @@ function setPane(list) {
 		}
 	}
 	div.innerHTML = innerHTML;
+}
+
+var onPreCopy = function(name) {
+    logEvent("code-pallet-copy", {name: name});
 }
 
 function attachTileBehaviour(n) {

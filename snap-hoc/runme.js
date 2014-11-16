@@ -70,7 +70,7 @@ var idx_to_title = [
 
 var btn_to_left = [
   ];
-  
+
 var codeHelp = {};
 
 function preload_left () {
@@ -110,7 +110,7 @@ function do_it_for_me() {
 }
 
 function fix_code() {
-  
+
 }
 
 function corralBtn(text, callback) {
@@ -156,6 +156,10 @@ var tileList = [
 
 function btn_click () {
   var index = parseInt($(this).data('index'));
+  var frame = document.getElementById("snap");
+  if (frame && frame.contentWindow) {
+      frame.contentWindow.logEvent("changeSection", {index: index});
+  }
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
   if (index === nLessons - 1) {
@@ -174,7 +178,7 @@ function btn_click () {
       //get_proj_xml ( name + ".xml", partial_load_xml);
     }
   }
-  
+
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson === nLessons - 1) {
@@ -195,7 +199,7 @@ function btn_click () {
   } else {
     place_in_corral_cover([
       corralBtn('Replace my code.', fix_code)
-      ]);    
+      ]);
   }
   load_left(index, function (leftText) {
     $('#left').html(leftText);
@@ -207,7 +211,7 @@ function btn_click () {
 	});
   }
   first_click = false;
-  
+
   setHelperContents();
 }
 

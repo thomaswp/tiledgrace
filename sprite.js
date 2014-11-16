@@ -1,6 +1,6 @@
 
 function Sprite(path) {
-	
+
 	this.x = 0;
 	this.y = 0;
 	this.width = 0;
@@ -12,13 +12,13 @@ function Sprite(path) {
 	this.penTrails = [];
 	this.penDown = false;
 	this.trailSegs = 0;
-	
+
 	var scale = 1;
 	var ready = false;
 	var image;
 	var idealHeight = 350.0;
-	
-	
+
+
 	image = new Image();
 	image.onload = function () {
 		ready = true;
@@ -26,7 +26,7 @@ function Sprite(path) {
 		if (this.height == 0) this.height = image.height;
 	};
 	image.src = path;
-	
+
 	this.draw = function(ctx) {
 		if (!ready) return;
 		if (this.penTrails.length > 0) {
@@ -74,7 +74,7 @@ function Sprite(path) {
 				var method = runningCode.methods[v];
 				if (!method.paramCounts || method.paramCounts[0] != 0) continue;
 				if (!runningCode.methods[v + ":="]) continue;
-				try {				
+				try {
 					var value = method([0])["_value"];
 					if (typeof(value) === 'undefined') continue;
 					if (!isNaN(value)) value = Math.round(value * 1000) / 1000;
@@ -84,7 +84,7 @@ function Sprite(path) {
 			};
 		}
 	};
-	
+
 	var wrapText = function(ctx, text, maxWidth) {
 	    var words = text.split(' '),
 	        lines = [],
@@ -117,13 +117,13 @@ function Sprite(path) {
 	    return lines;
 	}
 
-	
+
 	var sprite = this;
-	
+
 	this.test = function() {
 		alert("!");
 	}
-	
+
 	this.goTo = function(x, y) {
 		x *= scale; y *= scale;
 		sprite.x = x;
@@ -133,19 +133,19 @@ function Sprite(path) {
 			sprite.trailSegs++;
 		}
 	};
-	
+
 	this.pickRandom = function(min, max) {
 		return min + Math.floor((max - min + 1) * Math.random());
 	};
-	
+
 	this.turnAround = function() {
 		sprite.flip = !sprite.flip;
 	};
-	
+
 	this.say = function(text) {
 		sprite.message = text;
 	};
-	
+
 	this.doLater = function(stuff, time) {
 		time = Math.max(time, 0.1);
 		if (sprite.timeouts[stuff]) {
@@ -155,7 +155,7 @@ function Sprite(path) {
 			stuff.call(sprite.userCode);
 		}, time * 1000);
 	};
-	
+
 	this.clear = function() {
 		sprite.penTrails = [];
 		trailSegs = 0;
@@ -163,17 +163,17 @@ function Sprite(path) {
 			sprite.penTrails.push([[sprite.x, sprite.y]]);
 		}
 	}
-	
+
 	this.penDown = function() {
 		if (sprite.penDown) return;
 		sprite.penDown = true;
 		sprite.penTrails.push([[sprite.x, sprite.y]]);
 	}
-	
+
 	this.penUp = function() {
 		sprite.penDown = false;
 	}
-	
+
 	this.doClick = function(x, y) {
 		x += this.width / 2;
 		y += this.height / 2;
@@ -188,7 +188,7 @@ function Sprite(path) {
 			}
 		}
 	};
-	
+
 	this.stop = function() {
 		UserCode = null;
 		this.userCode = null;
@@ -199,7 +199,7 @@ function Sprite(path) {
 		this.penTrails = [];
 		this.penDown = false;
 	}
-	
+
 	this.run = function(script) {
 		this.stop();
 		script = "function UserCode() { " + script + " };"
@@ -211,5 +211,5 @@ function Sprite(path) {
 			console.log(e.message);
 		}
 	};
-	
+
 };

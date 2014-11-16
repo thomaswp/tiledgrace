@@ -5,20 +5,21 @@ SnapJS.aspect = 1; //4 / 3.0;
 SnapJS.start = function(canvas) {
 	SnapJS.canvas = canvas;
 	SnapJS.sprites = [];
-	
+
 	//var baseWidth = 250;
 	//$(canvas).attr("width", baseWidth);
 	//$(canvas).attr("height", baseWidth / SnapJS.aspect);
 	SnapJS.aspect = $(canvas).attr("width") / $(canvas).attr("height")
-	
+
 	$(canvas).click(function(e) {
 		var x = e.pageX - $(canvas).position().left - SnapJS.canvas.clientWidth / 2;
 		var y = e.pageY - $(canvas).position().top - SnapJS.canvas.clientHeight / 2;
+		logEvent("gameClick", {x: x, y: y});
 		for (var i = 0; i < SnapJS.sprites.length; i++) {
 			SnapJS.sprites[i].doClick(x, y);
 		}
 	});
-	
+
 	window.setInterval(SnapJS.draw, 1000/30);
 };
 

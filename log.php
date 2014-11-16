@@ -23,12 +23,12 @@ if ($conn->connect_errno) {
 $count = 0;
 foreach ($json as $event) {
 	$table = $event["table"];
-	$time = mysql_real_escape_string($event["time"]);
+	$time = $event["time"];
 	$type = mysql_real_escape_string($event["type"]);
 	$data = array_key_exists("data", $event) ? mysql_real_escape_string(json_encode($event["data"])) : "";
 
 
-	$sql = "INSERT INTO $table (userID, time, type, data) VALUES('$userID', $time, '$type', '$data')";
+	$sql = "INSERT INTO $table (userID, time, type, data) VALUES('$userID', FROM_UNIXTIME($time), '$type', '$data')";
 	if ($conn->query($sql) === TRUE) {
 		$count++;
 	} else {

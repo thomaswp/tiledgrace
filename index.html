@@ -55,7 +55,7 @@
 		 <option value="hoc" selected="selected">Hour of Code
      </select>
      <input type="button" onclick="reset(); go()" value="Run" id="runbutton">
-	 <input type="button" onclick="reset()" value="Stop" id="stopbutton">
+	 <input type="button" onclick="logEvent('stop-run'); reset()" value="Stop" id="stopbutton">
      <input type="button" onclick="toggleShrink()" value="Code View" id="viewbutton" style="display:none">
      <div id="indicator" style="display: inline-block; width: 16px; height: 16px; background: green;"></div>
      <a download="myprogram.grace" id="downloadlink" style="display:none">Download</a>
@@ -76,6 +76,7 @@
      <canvas id="overlay-canvas" width="500" height="500"></canvas>
 	 <div id="sprite"></div>
     <div id="acknowledgements"><a href="https://github.com/mwh/minigrace">Minigrace</a> is distributed under the GNU GPL version 3. <a href="http://www.entypo.com/">Entypo</a> pictograms by Daniel Bruce.</div>
+     <script type="text/javascript" src="logger.js"></script>
      <script type="text/javascript" src="main.js"></script>
      <script type="text/javascript" src="overlay.js"></script>
      <script type="text/javascript" src="drag.js"></script>
