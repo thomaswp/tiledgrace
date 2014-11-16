@@ -11,11 +11,15 @@ var chunkLine;
 var eventLog = [];
 var eventEpoch = new Date();
 
-function logEvent(name, data) {
+function logEvent(type, data) {
+    var date = new Date();
+    var table = type.indexOf("drag") >= 0 ? "drag_logs" : "grace_logs";
     eventLog.push({
-        name: name,
+        type: type,
         data: data,
-        timestamp: new Date() - eventEpoch,
+        time: date.getTime(),
+        timestamp: date - eventEpoch,
+        table: table,
     });
 }
 
