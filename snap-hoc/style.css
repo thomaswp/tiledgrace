@@ -52,7 +52,7 @@ code.comment {
   float: left;
 }
 
-#page-title {
+#page-title, #identifier {
   padding-left: 0.5em;
   font-size: 2.5em;
   color: white;

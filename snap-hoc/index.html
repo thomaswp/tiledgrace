@@ -31,6 +31,8 @@
     <div id='next-button' class='vcentered'>
         <button style='font-size: 1.5em;' class='btn btn-success'>Next</button>
     </div>
+
+    <div id='identifier' class='vcentered'></div>
   </div>
 
   <div id="below">
@@ -64,7 +66,7 @@
 	var onChildLoaded = function() {
         var frame = document.getElementById("snap");
         frame.contentWindow.setUserID(userID);
-		if (codeMode) {
+		if (window.conditionID == 1) {
 			frame.contentWindow.shrink();
 		}
 		setHelperContents();

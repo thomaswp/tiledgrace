@@ -143,6 +143,7 @@ function load_left (idx, callback) {
 }
 
 var tileList = [
+    // ["print", "whenClicked", "turnAround"],
 	["whenClicked", "turnAround"],
 	["number", "goToX()Y", "pickRandom()To"],
 	["say", "string"],

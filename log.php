@@ -10,15 +10,8 @@ if (count($json) == 0) return;
 $userID = $_GET["userID"];
 if (!$userID) die ("No userID");
 
-$servername = "localhost";
-$username = "grace_user";
-$password = "rAbuguBe";
-$database = "grace";
-
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_errno) {
-	die("Connection failed");
-}
+include 'db.php';
+$conn = connect();
 
 $count = 0;
 foreach ($json as $event) {

@@ -25,12 +25,19 @@ var register = function() {
     userID = $.urlParam("userID");
     conditionID = $.urlParam("conditionID");
 
-    if (!conditionID) conditionID = $.cookie("conditionID");
+	var cookieConditionID = $.cookie("conditionID");
     if (!conditionID) {
-        alert("Oops, something went wrong. Please contact the instructor!");
+		conditionID = cookieConditionID;
+	} else if (cookieConditionID && conditionID != cookieConditionID) {
+		// If the provided and stored conditionIDs don't match,
+		// assume a new user.
+		$.removeCookie("userID");
+	}
+    if (!conditionID) {
+		handleError();
         return false;
     }
-    $.cookie("conditionID", conditionID, {expires: 1});
+    $.cookie("conditionID", conditionID, {expires: 3});
 
     if (!userID) userID = $.cookie("userID");
     if (!userID) {
@@ -45,7 +52,22 @@ var register = function() {
         )
         return false;
     }
-    $.cookie("userID", userID, {expires: 1});
+    $.cookie("userID", userID, {expires: 3});
+
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function() {
+		if (this.status != 200 || isNaN(this.responseText)) {
+			handleError();
+			return;
+		}
+		document.getElementById("identifier").innerHTML = this.responseText;
+	};
+	xhr.open("GET", "register.php?userID=" + userID + "&conditionID=" + conditionID);
+	xhr.send();
 
     return true;
+}
+
+function handleError() {
+	alert("Oops, something went wrong. Please contact the instructor!");
 }
