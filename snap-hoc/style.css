@@ -112,7 +112,7 @@ code.comment {
 
 #left {
   overflow-y: auto;
-  height: calc(100% - 140px);
+  height: 100%;
 }
 
 #right {
