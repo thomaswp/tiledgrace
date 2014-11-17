@@ -1,4 +1,4 @@
-var codeMode = window.location.toString().indexOf("code=true") >= 0;
+var codeMode = window.conditionID == 1;
 var nLessons = 10;
 
 var waitForFinalEvent = (function () {

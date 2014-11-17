@@ -3,3 +3,4 @@
 * dialect "hoc"
 * Rework tutorial text a bit
 * Explain syntax error highlighting
+* survey block code

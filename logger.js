@@ -1,7 +1,11 @@
 var eventLog = [];
 var eventEpoch = new Date();
 var lastEventLogged = -1;
-var userID = "testUser";
+var userID = null;
+
+function setUserID(id) {
+    userID = id;
+}
 
 function logEvent(type, data, table) {
     var date = new Date();
@@ -20,6 +24,10 @@ function logEvent(type, data, table) {
 logEvent("loaded");
 
 var postLogs = function() {
+    if (!userID) {
+        alert("Oops, something went wrong. Please contat the instructor!");
+        return;
+    }
     var newlog = eventLog.slice(lastEventLogged + 1);
     lastEventLogged = eventLog.length - 1;
     if (newlog.length == 0) return;
